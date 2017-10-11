@@ -25,7 +25,9 @@
 % maths
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{bm}
 \newcommand{\prodSc}[2]{\langle #1 / #2 \rangle}
+\newcommand{\quSt}[1]{\bm{|#1\rangle}}
 
 \titleformat{\chapter}{\normalfont\huge}{\thechapter.}{20pt}{\huge}
 
@@ -187,7 +189,7 @@ $\prodSc{\cdot}{\cdot} : \left\{
 	Il est important de remarquer que s'il l'on se place dans un espace vectoriel complexe, le produit scalaire donne un nombre complexe, tandis qu'en se plaçant dans un espace vectoriel sur le corps des réels, le produit scalaire donnera lui même un réel. De manière générale, il associe à vecteur un élément du corps $\mathbb{K}$.
 }
 
-		\subsection{norme induite et espace de Hilbert}
+		\subsection{norme induite, suites de Cauchy et espace de Hilbert}
 
 \par{
 	Une norme est une application $N : E \rightarrow \mathbb{R}_{+}$ et qui satisfait l'hypothèse de séparation ($\forall u \in E, N(u) = 0 \Rightarrow u = 0_{E}$), d'absolue homogénéité ($\forall \lambda \in \mathbb{K}, \forall u \in E, N(\lambda \cdot u) = \lambda \cdot N(u)$), et l'inégalité triangulaire ($\forall (u,v) \in E^2, N(u+v) \leq N(u) + n(v)$).
@@ -199,16 +201,109 @@ $\prodSc{\cdot}{\cdot} : \left\{
 	A chaque produit scalaire est associé une norme, que l'on appele norme induite par le produit scalaire. Elle est définie par :
 }
 
-$$
+\begin{equation}
 N( \cdot ) : \left\{
   \begin{array}{rcr}
     E \rightarrow \mathbb{R}_{+} \hfill \\
     u \mapsto \sqrt{\prodSc{u}{u}} \\
   \end{array}
 \right
-$$
+\end{equation}
+
+\vspace{1\baselineskip}
+
+\par{
+	Une fois que nous possédons une norme, il est possible d'introduire la notion de convergence, mais aussi de définir les suites de Cauchy. Soit $(U)_{n}$ une suite de vecteurs de $E$. Alors $(U)_{n}$ suite de Cauchy $\Leftrightarrow$
+}
+
+\begin{equation} \forall \varepsilon \in \mathbb{R}_{+}^*, \exists N \in \mathbb{N} / \forall (p,q) \in \mathbb{N}^2, |u_{p} - u_{q}| < \varepsilon  \end{equation}
+
+\par{
+	Une suite de Cauchy est donc simplement une suite dont les termes se rapprochent uniformément les uns des autres en l'infini. Un espace vectoriel, muni d'une norme découlant d'un produit scalaire, et dont toutes les suites de Cauchy convergent, est appelé un espace de Hilbert. La convergence d'une suite vers une valeur $l \in \mathbb{K}$ se traduit par la propriété (\ref{convergence}) .
+}
+
+\begin{equation} \label{convergence} \forall \varepsilon \in \mathbb{R}_{+}^*, \exists N \in \mathbb{N} / \forall n \in \mathbb{N}, n \geq N \Rightarrow |u_{n} - l| < \varepsilon  \end{equation}
+
+\vspace{1\baselineskip}
+
+\par{
+	C'est dans un tel espace que nous allons travailler pour définir nos QuBits.
+}
 
 	\section{Application aux QuBits ( + sphere de bloch)}
+
+		\subsection{Définition d'un QuBit}
+
+\par{
+	Notons dans toute la suite $\mathbb{H}_{n}$ un espace de Hilbert complexe et de dimension $n$. Un vecteur quelconque de l'espace $\mathbb{H}_{2}$ est donc défini par : $\quSt{\Phi} = \lambda \quSt{0} + \mu \quSt{1}$, où $\lambda$ et $\mu$ sont des coefficient complexes, et où $\quSt{0}$ ainsi que $\quSt{1} $ sont deux vecteurs formant une base orthonormée de $\mathbb{H}_{2}$ (les deux vecteurs sont orthogonaux et de norme 1). Le produit scalaire de deux vecteurs est alors défini par \ref{prodScH2}), et la norme induite sera (\ref{normeH2}).
+}
+
+\begin{equation} \label{prodScH2}
+	 \prodSc{\Phi}{\Psi} = \langle ~ \lambda \quSt{0} + \mu \quSt{1} ~/~ \nu \quSt{0} + \sigma \quSt{1} ~\rangle = \lambda^* \nu + \mu^* \sigma = \prodSc{\Phi}{\Psi}^*
+\end{equation}
+
+\begin{equation} \label{normeH2}
+	 || \Phi ||^2 = \prodSc{\Phi}{\Phi} = \langle ~ \lambda \quSt{0} + \mu \quSt{1} ~/~ \lambda \quSt{0} + \mu \quSt{1} ~\rangle = |\lambda|^2 + |\mu|^2
+\end{equation}
+
+\vspace{1\baselineskip}
+
+\par{
+	Un QuBit isolé est alors défini comme un vecteur de cet espace $\mathbb{H}_{2}$ (voir \ref{QuBit} ) auquel on ajoute une conditionsur la norme : la condition de normalisation (\ref{normalisation}). Si cette dernière n'est pas indispensable, elle est commode et constamment utilisé dans la littérature, nous l'adopterons donc également.
+}
+
+\begin{equation} \label{QuBit}
+	\quSt{Q} = \alpha \cdot \quSt{0} + \beta \cdot \quSt{1}
+\end{equation}
+
+\begin{equation} \label{normalisation}
+	(\alpha,\beta) \in \mathbb{C}^2 / |\alpha|^2 + |\beta|^2 = 1
+\end{equation}
+
+		\subsection{QuBit et mesure}
+
+\par{
+	La mesure d'un QuBit corresponds à une application $\mathbb{M} : \mathbb{H}_{2} \rightarrow \{ \quSt{0}, \quSt{1} \}$ : on prends un QuBit et on détermine si ce dernier "était" dans l'état $\quSt{0}$ ou $\quSt{1}$. Mais comme vu dans la première partie de ce rapport, la mesure en mécanique quantique n'est pas une chose exacte : en effet, si le QBit était de la forme $\quSt{Q} = \quSt{0}$, et que l'on mesure la probabilité que ce dernier soit dans l'état $\quSt{0}$, nous obtiendrons bel et bien 100\%. De même, si $\quSt{Q} = \quSt{1}$, nous obtiendrons une probabilité de 0\%. En revanche, dans le cas général, tout se complique. Soit $\quSt{\omega}$ un vecteur de $\mathbb{H}_{2}$. Nous voulons connaître la probabilité selon laquelle notre QuBit sera mesuré dans l'état $\quSt{\Omega}$. Elle est définie par (\ref{probaState}).
+}
+
+\begin{equation} \label{probaState}
+	P(~ M( \quSt{Q} ) = \quSt{\Omega} ~) = | \langle ~ \quSt{Q} ~/~  \quSt{\Omega} ~\rangle |^2
+\end{equation}
+
+\vspace{1\baselineskip}
+
+\par{
+	La conséquence logique des dernières affirmations est que pour un QuBit de la forme $\quSt{Q} = \alpha \cdot \quSt{0} + \beta \cdot \quSt{1}$, ses probbilités d'être mesuré dans l'état $\quSt{0}$ est de $\lambda^2$, et celle d'être mesuré dans l'état $\quSt{1}$ est de $\mu^2$. la condition de normalisation (\ref{normalisation}) prends alors tout son sens : la somme des probabilités de deux évènements formant un ensemble complet vaut 1. Ce résultat se généralise pour n'importe quel couple d'etats , tant que ces derniers forment une base orthonormée.
+}
+
+		\subsection{Visualisation}
+
+\par{
+	si lamba et mu sont réels, et s'ils sont comlexes (sphere de boch)\\
+	$\bm{\lambda = \prodSc{Q}{0} }$ \\ \\ $\bm{\mu = \prodSc{Q}{1}}$ \\ \\ $\bm{\quSt{Q}~\quSt{0}~\quSt{1}}$
+}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=0.60]{images/reels}
+	\end{center}
+	\caption{\textit{Visualisation d'un état quantique dans le cas où $\lambda$ et $\mu$ sont des réels. introduction de la notation réduite.}}
+	\label{reels}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=0.60]{images/bloch}
+	\end{center}
+	\caption{\textit{Visualisation d'un état quantique dans le cas où $\lambda$ et $\mu$ sont des complexes.}}
+	\label{bloch}
+\end{figure}
+
+		\subsection{extension à plusieurs QuBits}
+
+\para{
+	On parle de plusieurs QuBits, mais aussi ds principes de la mécanique quantique de manière génrale (principe 1 et 2) et de l'aplitude de proba
+}
 
 	\section{Portes logiques}
 

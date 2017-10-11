@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.9)  10 OCT 2017 21:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.9)  12 OCT 2017 01:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -553,8 +553,15 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-LaTeX Info: Redefining \emph on input line 33.
+)) (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+)
+LaTeX Info: Redefining \emph on input line 35.
 \@indexfile=\write3
 \openout3 = `Report.idx'.
 
@@ -563,21 +570,21 @@ Writing index file Report.idx
 (./Report.aux)
 \openout1 = `Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Info: Redefining \degres on input line 43.
-LaTeX Info: Redefining \dots on input line 43.
-LaTeX Info: Redefining \up on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Info: Redefining \degres on input line 45.
+LaTeX Info: Redefining \dots on input line 45.
+LaTeX Info: Redefining \up on input line 45.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -668,17 +675,17 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 52.
+LaTeX Font Info:    Try loading font information for U+msa on input line 54.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 52.
+LaTeX Font Info:    Try loading font information for U+msb on input line 54.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
@@ -691,7 +698,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--59
  [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
 
  []
 
@@ -700,12 +707,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--68
 ]
 Chapitre 1.
 
-Overfull \hbox (12.0377pt too wide) in paragraph at lines 69--69
+Overfull \hbox (12.0377pt too wide) in paragraph at lines 71--71
 |[]\T1/cmr/m/n/24.88 Historique : mé-ca-nique quan-tique et Qu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
@@ -714,27 +721,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--74
 ]
 Chapitre 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
 
-Overfull \hbox (1.49098pt too wide) in paragraph at lines 94--94
+Overfull \hbox (1.49098pt too wide) in paragraph at lines 96--96
 |[]\T1/cmr/bx/n/17.28 Solid State Qu-Bit (su-pra-con-duc-tor tech-no-logy)| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
 
@@ -742,32 +749,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
 ]
 Chapitre 3.
-./Report.tex:109: Missing $ inserted.
+./Report.tex:111: Missing $ inserted.
 <inserted text> 
                 $
-l.109 ...i d'une loi de composition interne \oplus
+l.111 ...i d'une loi de composition interne \oplus
                                                   . $ (G, \oplus)$ est un gr...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./Report.tex:109: Missing $ inserted.
+./Report.tex:111: Missing $ inserted.
 <inserted text> 
                 $
-l.109 ... composition interne \oplus. $ (G, \oplus
+l.111 ... composition interne \oplus. $ (G, \oplus
                                                   )$ est un groupe abÃ©lien ...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./Report.tex:109: Missing $ inserted.
+./Report.tex:111: Missing $ inserted.
 <inserted text> 
                 $
-l.109 ...)$ est un groupe abÃ©lien \Leftrightarrow
+l.111 ...)$ est un groupe abÃ©lien \Leftrightarrow
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./Report.tex:110: Extra }, or forgotten $.
-l.110 }
+./Report.tex:112: Extra }, or forgotten $.
+l.112 }
        
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -775,29 +782,29 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./Report.tex:111: Missing $ inserted.
+./Report.tex:113: Missing $ inserted.
 <inserted text> 
                 $
-l.111 
+l.113 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--116
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
-./Report.tex:121: Missing $ inserted.
+./Report.tex:123: Missing $ inserted.
 <inserted text> 
                 $
-l.121 ... deux lois de compositions interne \oplus
+l.123 ... deux lois de compositions interne \oplus
                                                    et \otimes.
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./Report.tex:122: Extra }, or forgotten $.
-l.122 }
+./Report.tex:124: Extra }, or forgotten $.
+l.124 }
        
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -805,10 +812,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./Report.tex:123: Missing $ inserted.
+./Report.tex:125: Missing $ inserted.
 <inserted text> 
                 $
-l.123 
+l.125 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -816,10 +823,10 @@ you left one out. Proceed, with fingers crossed.
 [6
 
 ]
-./Report.tex:178: Missing delimiter (. inserted).
+./Report.tex:180: Missing delimiter (. inserted).
 <to be read again> 
                    $
-l.178 \right$
+l.180 \right$
              
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -828,8 +835,8 @@ braces don't get unbalanced. Otherwise just proceed.
 Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
-./Report.tex:180: Undefined control sequence.
-l.180 ...ritÃ©) : $\forall (u,v,w) \in E^3, \proSc
+./Report.tex:182: Undefined control sequence.
+l.182 ...ritÃ©) : $\forall (u,v,w) \in E^3, \proSc
                                                   {u}{v+w}= \prodSc{u}{v} + ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -838,12 +845,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (16.08032pt too wide) in paragraph at lines 180--181
+Overfull \hbox (16.08032pt too wide) in paragraph at lines 182--183
 []\T1/cmr/m/n/12 linéarité (de la sy-mé-trie dé-coule alors la bi-linéarité) : $\OMS/cmsy/m/n/12 8\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u; v; w\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 E[]; u[] \OT1/cmr/m/n/12 =
  []
 
-./Report.tex:181: Undefined control sequence.
-l.181 ...defini positif : $\forall u \in E, \proSc
+./Report.tex:183: Undefined control sequence.
+l.183 ...defini positif : $\forall u \in E, \proSc
                                                   {u}{u} \geq 0$ et $\forall...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -851,8 +858,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report.tex:181: Undefined control sequence.
-l.181 ...u \in E, \prodSc{u}{u} = 0 \Lefrightarrow
+./Report.tex:183: Undefined control sequence.
+l.183 ...u \in E, \prodSc{u}{u} = 0 \Lefrightarrow
                                                    u = 0_{E}$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -860,11 +867,11 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report.tex:209: Missing delimiter (. inserted).
+./Report.tex:211: Missing delimiter (. inserted).
 <to be read again> 
-                   $
-l.209 $
-       $
+                   \gdef 
+l.211 \end{equation}
+                    
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
 should probably delete the `{' by typing `1' now, so that
@@ -874,46 +881,91 @@ nonnegative, or you can use `\delimiter <delimiter code>'.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
+ Make it at least 14.61858pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 282--285
 
  []
 
-[8
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--285
+
+ []
+
+<images/reels.png, id=51, 389.455pt x 193.72375pt>
+File: images/reels.png Graphic file (type png)
+ <use images/reels.png>
+Package pdftex.def Info: images/reels.png used on input line 288.
+(pdftex.def)             Requested size: 233.67479pt x 116.23514pt.
+ <images/bloch.png, id=53, 383.93437pt x 348.55219pt>
+File: images/bloch.png Graphic file (type png)
+ <use images/bloch.png>
+Package pdftex.def Info: images/bloch.png used on input line 296.
+(pdftex.def)             Requested size: 230.3624pt x 209.1329pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9 <./images/reels.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10 <./images/bloch.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+
+ []
+
+[11
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
 
  []
 
-[9
+[12
 
-] [10
+] [13
 
 ] (./Report.aux) )
 (\end occurred inside a group at level 2)
 
-### simple group (level 2) entered at line 120 ({)
-### simple group (level 1) entered at line 108 ({)
+### simple group (level 2) entered at line 122 ({)
+### simple group (level 1) entered at line 110 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6257 strings out of 492995
- 83263 string characters out of 6132704
- 171222 words of memory out of 5000000
- 9683 multiletter control sequences out of 15000+600000
- 18641 words of font info for 53 fonts, out of 8000000 for 9000
+ 6383 strings out of 492995
+ 84704 string characters out of 6132704
+ 173670 words of memory out of 5000000
+ 9787 multiletter control sequences out of 15000+600000
+ 25530 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,14n,43p,475b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
-ic/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb>
-Output written on Report.pdf (11 pages, 185779 bytes).
+ 39i,15n,43p,883b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
+/public/cm-super/sfbx1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on Report.pdf (14 pages, 306383 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 145 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

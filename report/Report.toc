@@ -11,7 +11,11 @@
 \contentsline {subsection}{\numberline {3.1.1}Loi de composition interne et groupe}{6}
 \contentsline {subsection}{\numberline {3.1.2}Anneaux et corps}{6}
 \contentsline {subsection}{\numberline {3.1.3}espace vectoriel et produit scalaire}{6}
-\contentsline {subsection}{\numberline {3.1.4}norme induite et espace de Hilbert}{7}
-\contentsline {section}{\numberline {3.2}Application aux QuBits ( + sphere de bloch)}{7}
-\contentsline {section}{\numberline {3.3}Portes logiques}{7}
-\contentsline {chapter}{Conclusion}{8}
+\contentsline {subsection}{\numberline {3.1.4}norme induite, suites de Cauchy et espace de Hilbert}{7}
+\contentsline {section}{\numberline {3.2}Application aux QuBits ( + sphere de bloch)}{8}
+\contentsline {subsection}{\numberline {3.2.1}D\IeC {\'e}finition d'un QuBit}{8}
+\contentsline {subsection}{\numberline {3.2.2}QuBit et mesure}{8}
+\contentsline {subsection}{\numberline {3.2.3}Visualisation}{9}
+\contentsline {subsection}{\numberline {3.2.4}extension \IeC {\`a} plusieurs QuBits}{9}
+\contentsline {section}{\numberline {3.3}Portes logiques}{9}
+\contentsline {chapter}{Conclusion}{11}
