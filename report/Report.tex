@@ -267,7 +267,7 @@ N( \cdot ) : \left\{
 }
 
 \begin{equation} \label{probaState}
-	P(~ M( \quSt{Q} ) = \quSt{\Omega} ~) = | \langle ~ \quSt{Q} ~/~  \quSt{\Omega} ~\rangle |^2
+	P(~ M( \quSt{Q} ) = \quSt{\Omega} ~) = | \langle ~ \quSt{Q} ~/~  \quSt{\Omega} ~\rangle |^2 = P(~ M( Q ) = \Omega ~)
 \end{equation}
 
 \vspace{1\baselineskip}
@@ -276,36 +276,253 @@ N( \cdot ) : \left\{
 	La conséquence logique des dernières affirmations est que pour un QuBit de la forme $\quSt{Q} = \alpha \cdot \quSt{0} + \beta \cdot \quSt{1}$, ses probbilités d'être mesuré dans l'état $\quSt{0}$ est de $\lambda^2$, et celle d'être mesuré dans l'état $\quSt{1}$ est de $\mu^2$. la condition de normalisation (\ref{normalisation}) prends alors tout son sens : la somme des probabilités de deux évènements formant un ensemble complet vaut 1. Ce résultat se généralise pour n'importe quel couple d'etats , tant que ces derniers forment une base orthonormée.
 }
 
-		\subsection{Visualisation}
+		\subsection{Visualisation avec la sphère de Bloch}
 
 \par{
-	si lamba et mu sont réels, et s'ils sont comlexes (sphere de boch)\\
-	$\bm{\lambda = \prodSc{Q}{0} }$ \\ \\ $\bm{\mu = \prodSc{Q}{1}}$ \\ \\ $\bm{\quSt{Q}~\quSt{0}~\quSt{1}}$
+	L'objectif de cette section est de donner un aperçu visuel au lecteur d'un état quantique. C'est à cette problématique que la sphère de Bloch, nommée après le brillant mathématicien, apporte une réponse. Pour présenter cette dernière, il est d'abord nécessaire de définir les relations et classes d'équivalences. \\
+	%$\bm{\lambda = \prodSc{Q}{0} }$ \\ \\ $\bm{\mu = \prodSc{Q}{1}}$ \\ \\ $\bm{\quSt{Q}~\quSt{0}~\quSt{1}}$
 }
 
-\begin{figure}
-	\begin{center}
-		\includegraphics[scale=0.60]{images/reels}
-	\end{center}
-	\caption{\textit{Visualisation d'un état quantique dans le cas où $\lambda$ et $\mu$ sont des réels. introduction de la notation réduite.}}
-	\label{reels}
-\end{figure}
+\par{
+	$R : E \rightarrow E  $ relation d'équivalence \Leftrightarrow
+}
+
+\begin{itemize}
+\item[$\bullet$] $R$ refléxive : $\forall x \in E, x R x$ (x est en relation avec lui même)}
+\item[$\bullet$] $R$ symétrique : $\forall (x,y) \in E^2, x R y \Rightarrow y R x$
+\item[$\bullet$] $R$ transitive : $\forall (x,y,z) \in E^3, x R y \text{ et } y R z \Rightarrow x R z$
+\end{itemize}
+
+\vspace{1\baselineskip}
+
+\par{
+	Une classe d'équivalence d'un élément $x$, notée $[x]$, est alors simplement défini comme le sous ensemble de E contenant tous les éléments de E en relation avec x, soit plus formellement : $x \in E, \forall y \in E, y \in [x] \Leftrightarrow y R x$ . Avec ceci en tête, examinons maintenant la relation $R : \mathbb{H}^2 \rightarrow \mathbb{H}^2$
+}
+
+\begin{equation}
+	 \quSt{\Psi} R \quSt{\Psi '} \Leftrightarrow \exists z \in \mathbb{C} / \left\{
+		  \begin{array}{rcr}
+		      \quSt{\Psi} R \quSt{\Psi '} \Leftrightarrow \quSt{\Psi} = z \quSt{\Psi '} \\
+		      |z| = 1 \\
+		  \end{array}
+		\right
+\end{equation}
+
+\vspace{1\baselineskip}
+
+\par{
+	$R$ est une relation d'équivalence (la réfléxivité, la symétrie et la transitivité sont toutes trivialement vérifiées). Deux QuBit appartenant à une même classe d'équivalence sont égaux, à une multiplication par un complexe $z$ de module 1. Un tel $z = e^{i\theta}$ est appelé un facteur de phase. Un QuBit pur est alors simplement un représentant d'une classe d'équivalence de la relation d'équivalence évoquée ci-dessus. Multiplier un état par un facteur de phase ne changera par la probabilité d'être mesuré dans un état $\quSt{\alpha}$ donné. En effet :
+}
+
+\begin{align}
+	P(~ M( z \quSt{\Psi} ) = \quSt{\alpha} ~) &= \prodSc{z \quSt{\Psi}}{\quSt{\alpha}} \\
+	 &= |z| \prodSc{\quSt{\Psi}}{\quSt{\alpha}} \\
+	 &= P(~ M( \quSt{\Psi} ) = \quSt{\alpha} ~)
+\end{align}
+
+\vspace{1\baselineskip}
+
+\par{
+	On peux alors supposer que deux vecteurs de $\mathbb{H}^2$ sont équivalents s'ils ne différent que par un facteur de phase, ce qui amène à la réécriture suivante :
+}
+
+\begin{align}
+	\label{blochEq}
+	\forall \quSt{\Psi} \in \mathbb{H}^2 , \exists \theta \in [0, \pi] ~/~ \quSt{\Psi} &= \cos(\theta/2) \cdot \quSt{0} + \sin(\theta/2) e^{i(\varphi)} \cdot \quSt{1} \\
+	&\equiv \cos(\theta/2) e^{-i(\varphi/2)} \cdot \quSt{0} + \sin(\theta/2) e^{i(\varphi/2)} \cdot \quSt{1}
+\end{align}
+
+\vspace{1\baselineskip}
+
+\para{
+Sous cette nouvelle forme, il est possible de représenter tout QuBit pur comme point sur une sphère, où $\theta$ et $\varphi$ font office de colatitude et longitude (voir figure \ref{bloch}). La correspondance entre l'espace des QuBit purs et une sphère de Bloch est un isomorphisme : une application bijective entre deux espaces, dont la réciproque est également bijective. On constate cependant sur la figure \ref{bloch} que la linéarité n'est pas préservée (en effet, $\quSt{0} \neq -\quSt{1}$). Il faut ainsi considérer cette relation comme une occasion de visualiser plus simplement l'état des QuBits, mais ne permettant pas nécessairement d'interprétations graphiques cohérentes.
+}
 
 \begin{figure}
 	\begin{center}
 		\includegraphics[scale=0.60]{images/bloch}
 	\end{center}
-	\caption{\textit{Visualisation d'un état quantique dans le cas où $\lambda$ et $\mu$ sont des complexes.}}
+	\caption{\textit{Visualisation d'un état quantique dans la sphère de Bloch.}}
 	\label{bloch}
 \end{figure}
 
 		\subsection{extension à plusieurs QuBits}
 
 \para{
-	On parle de plusieurs QuBits, mais aussi ds principes de la mécanique quantique de manière génrale (principe 1 et 2) et de l'aplitude de proba
+	Le passage de un à deux QuBit apporte de nombreuses nouveautés et dévoile une complexité qui pourrait sembler à priori innatendue. Mais c'est cette dernière qui donne tout son potentiel à l'informatique quantique. Pour expliquer ce dernier, il est nécessaire de définir le produit tensoriel $\otimes$ de deux QuBits (\ref{tensoriel}) .
+}
+
+\begin{equation}
+	\label{tensoriel}
+	(\cdot) \otimes (\cdot) : \left\{
+	  \begin{array}{rcr}
+	    \mathbb{H_1}^2 \times \mathbb{H_2}^2 \rightarrow \mathbb{H}^4 \hfill \\
+	    (\quSt{\varphi},\quSt{\Psi}) \mapsto \quSt{\varphi} \otimes \quSt{\Psi} = \left( \begin{array}{c} \alpha \\ \beta \\\end{array} \right ) \otimes \left( \begin{array}{c} \lambda \\ \mu \\ \end{array} \right ) = \left( \begin{array}{c} \alpha \lambda \\ \alpha \mu \\ \beta \lambda \\ \beta \mu \end{array} \right ) \\
+	  \end{array}
+	\right
+\end{equation}
+
+\para{
+	Le produit tensoriel de deux espaces $\mathbb{H_i}^2$, qui corresponds à l'espace dans lequel deux QuBits existent, est défini par un espace dont la base est égale à toutes les combinaisons possibles de produit tensoriels entre les vecteurs de bases des deux espaces de départ. C'est donc un espace de dimension 4 ayant pour base orthonormée :
+}
+
+\begin{equation}
+	 \{ \quSt{0_A \otimes 0_B}, \quSt{0_A \otimes 1_B} , \quSt{1_A \otimes 0_B} , \quSt{1_A \otimes 1_B} \} = \{ \quSt{00}, \quSt{01}, \quSt{10}, \quSt{11} \}
+\end{equation}
+
+\begin{equation}
+	 =  \left\{ \left( \begin{array}{c} 1 \\ 0 \\ 0 \\ 0 \end{array} \right ), \left( \begin{array}{c} 0 \\ 1 \\ 0 \\ 0 \end{array} \right ), \left( \begin{array}{c} 0 \\ 0 \\ 1 \\ 0 \end{array} \right ), \left( \begin{array}{c} 0 \\ 0 \\ 0 \\ 1 \end{array} \right ) \right\} \\
+\end{equation}
+
+\vspace{1\baselineskip}
+
+\begin{equation}
+	 =  \left\{ \left( \begin{matrix} 1 & 0 \\ 0 & 0 \end{matrix} \right ), \left( \begin{matrix} 0 & 1 \\ 0 & 0 \end{matrix} \right ), \left( \begin{matrix} 0 & 0 \\ 1 & 0 \end{matrix} \right ), \left( \begin{matrix} 0 & 0 \\ 0 & 1 \end{matrix} \right ) \right\} \\
+\end{equation}
+
+\vspace{1\baselineskip}
+
+\par{
+	On définit les états quantiques purs comme étant ceux pouvant s'écrire $\quSt{\varphi} \otimes \quSt{\Psi}$. En reprenant les coefficients utilisés dans l'equation (\ref{tensoriel}), on en déduit que les états quantiques purs sont ceux de la forme :
+}
+
+\begin{equation}
+	\quSt{\varphi} \otimes \quSt{\Psi} = \alpha \lambda \cdot \quSt{00} + \alpha \mu \cdot \quSt{01} + \beta \lambda \cdot \quSt{10} + \beta \mu \cdot \quSt{11}
+\end{equation}
+
+\vspace{1\baselineskip}
+
+\par{
+	Les états quantiques n'étant pas purs sont dits intriqués, et l'existence de ces derniers a remis en cause le principe de localité que nous avons évoqués dans la partie 1. En effet, si l'on considère l'état de Bell : $\quSt{\Psi} = \frac{1}{\sqrt{2}} \cdot (~ \quSt{00} + \quSt{11}  ~)$. Alors une mesure de l'un des deux QuBit dans sa base respective nous donnera immédiatement l'information de la mesure du second QuBit dans sa propre base, même si les deux QuBit, après intrication, sont séparés d'un potentielle très grande distance\footnote{Des tests expérimentaux confirme cet effet pour une distance supérieure à 10km.}.
+}
+
+\vspace{1\baselineskip}
+
+\par{
+	Il semblerait tentant de faire un parallèle à l'informatique classique : deux bits peuvent ainsi former un registre dans seulement 4 états possibles : ${ 00, 01, 10, 11 }$. Cependant, là où il n'y a que quatre possibilités fixes en informatique classiques, il est nécessaire de se rappeler que dans $\mathbb{H}^4$, les vecteurs / registres de deux QuBits sont des combinaisons linéaires des vecteurs $ \{ \quSt{00}, \quSt{01}, \quSt{10}, \quSt{11} \} $. Les possibilités sont donc immenses, et tant qu'aucune mesure n'est effectuée, l'état quantique est maintenu (nous ne reparlerons par ici des problèmes de décohérence présentés en partie 1), conservant ainsi l'incertitude qui fait la force de l'informatique quantique. Ainsi, chaque ajout de QuBit augmente exponentiellement le nombre de combinaisons possibles comparées aux combinaisons "classiques".
 }
 
 	\section{Portes logiques}
+
+		\subsection{évolution dans le temps d'un QuBit}
+
+\par{
+	Les relations établies dans les parties précédentes ont été écrites dans un espace $\mathbb{H}^2$ concernant un unique QuBit, puis généralisées à un ensemble de deux QuBit. Le passage à un nombre supérieur de QuBit s'effectuera exactement de la même manière, avec le produit tensoriel, défini de manière légèrement plus généralisée, pour pouvoir s'appliquer à deux espaces $\mathbb{H1}$ et $\mathbb{H2}$ de dimension quelconque.
+}
+
+\vspace{1\baselineskip}
+
+\par{
+	Nous pouvons donc désormais considérer un état quantique appartenant à un espace $\mathbb{H}^{2^n}$ , c'est-à-dire un registre composé de n QuBits. Notons cet espace plus simplement $\mathbb{H}^{\otimes n}$. Il est alors possible de donner l'équation de Schrödinger, qui décrit l'évolution dans le temps de tout état quantique précédant une mesure par :
+}
+
+\begin{equation}
+	\frac{d \Psi(t)}{dt} = -i H \Psi(t)
+\end{equation}
+
+\vspace{1\baselineskip}
+
+\par{
+	Où $H$ est l'opérateur Hamiltonien. Dans ce cas particulier de la résolution de l'équation de Schrödinger (pour l'instant, j'ai du mal à comprendre parfaitement d'où sortent les hypothèses menant aux simplifications donnant l'equation ci-dessus), nous avons tout simplement une solution de la forme $\Psi(t) = U(t) \Psi(0)$, où $U(t) = e^{-itH}$. Notons que cette évolution temporelle ne modifie pas la norme de l'état quantique $\Psi$.
+}
+
+		\subsection{algèbre des portes logiques}
+
+\par{
+	Faire fonctionner un ordinateur classique requiert de savoir créer des bits (de nos jours, il s'agit de transistors de quelques dizaines de nanomètres), mais également de pouvoir utiliser des opérations sur ces derniers. Ainsi, avec des portes NOT, AND, OR, XOR etc, il est possible de fabriquer toutes les opérations indispensables à un algèbre de base, donnnant ainsi à l'ordinateur une grande puissance de calcul.
+}
+
+\vspace{1\baselineskip}
+
+\par{
+	L'analogie avec l'ordinateur quantique est parfaitement justifiée : il nous faut créer des portes logiques quantiques pouvant agir sur des QuBits afin de pouvoir faire d'un ordinateur quantique une réalité. De manière générale, une porte logique est une application de la forme :
+}
+
+\begin{align}
+	\label{porteLogique}
+	L( ... ) : \left\{
+	  \begin{array}{rcr}
+	    \mathbb{H}^{\otimes n} \times \mathbb{H}^{\otimes n} \times \mathbb{H}^{\otimes n} \times ... &\rightarrow \mathbb{H}^{\otimes n} \times \mathbb{H}^{\otimes n} \times \mathbb{H}^{\otimes n} \times ... \hfill \\
+	    (\quSt{\varphi }, \quSt{\Psi }, \quSt{\Omega }, ... ) &\mapsto (L(\varphi),L(\Psi),L(\Omega), ...) \\
+	  \end{array}
+	\right
+\end{align}
+
+\par{
+	C'est donc simplement une application linéaire qui a un nombre donné de QuBit tous de même dimension, renvoi un même nombre de QuBits dans un état potentiellement différent. Une porte quantique n'effectuant pas de mesure, il est nécessaire que la transformation maintienne la condition de normalité. Au final, pour représenter une porte logique, il suffira d'utiliser une matrice $M$ de norme 1. L'état de chaque QuBit après passage dans $L$ sera ainsi facilement calculé par $L(\Psi) = M \cdot \Psi$ . Par définition, il apparait que le calcul quantique est spontanément réversible.
+}
+
+		\subsection{portes logiques à 1 QuBit}
+
+\par{
+	Nous allons maintenant nous intéresser à plusieurs portes quantiques classiques, en commençant bien sur par le niveau le plus bas : les portes agissant sur un registre d'un seul QuBit. Nous allons définir deux porte quantiques, phase $L_{\Phi}$ et rotation $L_{\alpha}$, à partir desquelles il est possible de reconstruire toutes les portes de "dimension 1". Notons $Mat()$ l'application qui à une porte quantique associe l'unique matrice la représentant (on se positionne dans la base orthonormée $\{ \quSt{0}, \quSt{1} \}$). Alors :
+}
+
+\begin{equation}
+	 Mat(L_{\Phi}) = \left( \begin{matrix} 1 & 0 \\ 0 & e^{i\Phi} \end{matrix} \right ) \\
+\end{equation}
+
+\begin{equation}
+	 Mat(L_{\alpha}) = \left( \begin{matrix} cos(\alpha) & sin(\alpha) \\ -sin(\alpha) & cos(\alpha) \end{matrix} \right ) \\
+\end{equation}
+
+\vspace{1\baselineskip}
+
+\par{
+	La première porte ajoute un vecteur de phase à $\quSt{1}$, tandis que la seconde effectue une rotation de $\alpha$ du QuBit. Ces transformations rappellent exactement la définition d'un point sur la sphère de Bloch (equation \ref{blochEq}), ce qui nous permet d'affirmer qu'il est effectivement possible d'aboutir à n'importe quelle transformation à partir de ces deux portes logiques. On peux ainsi définir la classique porte NOT (négation du QuBit) et la porte de Hadamard :
+}
+
+\begin{equation}
+	 Mat(NOT) = \left( \begin{matrix} 0 & 1 \\ 1 & 0 \end{matrix} \right ) \\
+\end{equation}
+
+\begin{equation}
+	 Mat(HADAMARD) = \frac{1}{\sqrt{2}} \left( \begin{matrix} 1 & 1 \\ 1 & -1 \end{matrix} \right ) \\
+\end{equation}
+
+\vspace{1\baselineskip}
+
+\par{
+	Si l'interprétation de la porte $NOT$ est immédiate, il convient de revenir rapidement sur la porte de $HADAMARD$. C'est une porte indispensable en programmation quantique: en effet, elle sert souvent de première étape lors d'un algorithme, pour faire passer un registre d'un état initial $\quSt{0}_i$ pour chacun de ses QuBit à un état final de superposition des $2^n$ états $\quSt{0}_i$ et $\quSt{1}_i$ de podération/norme égale à $\frac{1}{2}$.
+}
+
+		\subsection{portes logiques à 2 QuBit (j'ai choisi de pas parler de la porte CU)}
+
+\par{
+	Les portes logiques à deux QuBit suivent toutes une logique similaire : l'un des deux QuBit est appelé QuBit contrôle, et l'autre QuBit cible (usuellement, nous les "positionnons" dans cet ordre). L'idée est alors de contrôler l'état du QuBit de contrôle, et d'agir -ou non- sur le QuBit cible en fonction du résultat.
+}
+
+\vspace{1\baselineskip}
+
+\par{
+	Nous pouvons alors très facilement définir deux premières portes quantiques sur deux QuBits : la porte $CNOT$ qui appliquera ou non la transformation $NOT$ sur le QuBit cible, et la porte $CPHASE$ qui appliquera potentiellement une phase au QuBit ciblé. Enfin, la porte $SWAP$ va simplement échanger les composantes $\quSt{01}$ et $\quSt{}$. Voici leur matrices :
+}
+
+\begin{equation}
+	 Mat(CNOT) = \left( \begin{matrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \\ \end{matrix} \right ) \\
+\end{equation}
+
+\vspace{1\baselineskip}
+
+\begin{equation}
+	 Mat(CPHASE) = \left( \begin{matrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & e^{i\Phi} \\ \end{matrix} \right ) \\
+\end{equation}
+
+\vspace{1\baselineskip}
+
+\begin{equation}
+	 Mat(SWAP) = \left( \begin{matrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ \end{matrix} \right ) \\
+\end{equation}
+
+		\subsection{Ensemble universel}
+
+\par{
+	Un ensemble universel est un ensemble de portes quantiques tel que tout calcul quantique soit décomposable en opération composées de ces différentes portes. Les ensembles $\{PHASE,ROTATION,CPHASE\}$ et $\{PHASE,ROTATION,CNOT\}$ (PREUVE?!) sont de tels ensembles universels. En effet, avec les deux premières portes, toute opération sur un unique QuBit est réalisable, tandis qu'avec la porte $CPHASE$ ou $CNOT$, une intrication est possible, ce qui permet de "descendre en dimension" et donc assurer que tout calcul est réalisable.
+}
+
+\chapter{Simulation d'algorithme quantiques}
+	\section{Algorithme de Shor}
+	\section{Algorithme de Grover}
 
 %
 % -----------------------
