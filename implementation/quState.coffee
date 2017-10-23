@@ -44,4 +44,12 @@ class QuState extends QuObject
         @coeffs
 
     getState: () ->
-        @getStr('|'+@coeffs+'>')
+        ret = ''
+        for i in [0...Math.pow(2,@dim)]
+            if @coeffs[i] != 0
+                ret += '(' + @coeffs[i] + ')*|' + (@toBin i, @dim) + '> + '
+        ret.slice(0,-2)
+        #ret.slice(-2)
+
+    isMeasured: () ->
+        @measured

@@ -20,3 +20,9 @@ class QuObject
         for i in [0...arr.length]
             ret +=  "" + arr[i] + ""
         ret
+
+    toBin: (int, dim) ->
+        bin = int.toString(2)
+        for i in [0...(dim - bin.length)]
+            bin = "0" + bin
+        bin
