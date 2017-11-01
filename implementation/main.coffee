@@ -1,93 +1,41 @@
-# MAIN #
+###
 
-Q = new QuObject
+pour la classe QuRegister, chaque porte retourne this ( = @) pour pouvoir chainer les appels. Malgré cette possibilité, j'ai décidé que chaque appel à un porte modifierait l'objet en lui meme . Ainsi, on peux faire myreg.unePorteQuantique() puis observer myReg : il aura subit les modifications de la porte concernée.
 
-strReplace = (str, index, replacement) ->
-    str.substr(0, index) + replacement + str.substr(index + replacement.length)
+Concernant la manière de coder les portes, pour le moment, je n'ai pas utilisé les matrices, car ça m'a aidé à mieux comprendre de faire ça "à la main". Dans l'avenir, je repasserai peut etre par la représentation matricielle. Je me demande cela dit s'il n'y a pas un léger gachis de calculs en utilisant les matrices.
 
+###
 
-swap = (quSt, x, y) ->
-    newCoeffs = ( 0 for [1..(Math.pow(2,quSt.dim))] )
-    #console.log newCoeffs
+# testing measure()
+reg0 = new QuRegister [math.complex(0,4),0,0,4,0,0,0,0]
+console.log "before measure : " + reg0.getState()
+reg0.measure()
+console.log "after  measure : " + reg0.getState()
 
-    for i in [0...(Math.pow(2,quSt.dim))]
-        bin = (Q.toBin i, quSt.dim).split('')
-        [ bin[x], bin[y] ] = [ bin[y], bin[x] ]
-        bin = bin.join('')
-        #console.log "new bin : " + bin
-        newCoeffs[parseInt(bin,2)] = quSt.coeffs[i]
+# testing hadamard
+reg1 = new QuRegister [1,0,0,0,0,0,1,0]
+console.log "HADAMARD(0) : " + reg1.getState() + " ---> " + reg1.hadamard(0).getState()
 
-    new QuState quSt.dim, newCoeffs
+# testing hadamard on all qubits
+reg2 = new QuRegister [1,0,0,0,0,0,1,0]
+console.log "HADAMARD ALL : " + reg2.getState() + " ---> " + reg2.hadamardAll().getState()
 
+# testing swap on qubits 0 and 2
+reg3 = new QuRegister "|001>" # = [0,1,0,0,0,0,0,0]
+console.log "SWAP(0,2) : " + reg3.getState() + " ---> " + reg3.swap(0,2).getState()
 
-hadamard = (quSt, x) ->
-    newCoeffs = ( 0 for [1..(Math.pow(2,quSt.dim))] )
+# testing not on qubit 0
+reg4 = new QuRegister "|001>"
+console.log "NOT(0) : " + reg4.getState() + " ---> " + reg4.not(0).getState()
 
-    for i in [0...(Math.pow(2,quSt.dim))]
-        bin = (Q.toBin i, quSt.dim)
-        if (bin[x] == "0") # H(|0>) = ( 1/sqrt(2) )*( |0> + |1> )
-            [c1,c2] = [bin, (strReplace bin, x, "1" )]
-            newCoeffs[parseInt(c1,2)] += (quSt.coeffs[i]/Math.sqrt(2))
-            newCoeffs[parseInt(c2,2)] += (quSt.coeffs[i]/Math.sqrt(2))
-        else # H(|1>) = ( 1/sqrt(2) )*( |0> - |1> )
-            [c1,c2] = [(strReplace bin, x, "0" ), bin]
-            newCoeffs[parseInt(c1,2)] += (quSt.coeffs[i]/Math.sqrt(2))
-            newCoeffs[parseInt(c2,2)] -= (quSt.coeffs[i]/Math.sqrt(2))
+# testing cnot on qubit 2 with controlled qubit 0
+reg5 = new QuRegister [0,0,0,0,1,0,0,0]
+console.log "CNOT(0,2) : " + reg5.getState() + " ---> " + reg5.cnot(0,2).getState()
 
-    new QuState quSt.dim, newCoeffs
+# testing phase on qubit 1
+reg6 = new QuRegister "/010>"
+console.log "PHASE(1,e^(i*PI/4)) : " + reg6.getState() + " ---> " + reg6.phase(1,(math.PI)/4).getState()
 
-
-hadamardAll = (quSt) ->
-    ret = quSt
-    for i in [0...quSt.dim]
-        ret = hadamard(ret, i)
-    ret
-
-
-notGate = (quSt, x) ->
-    newCoeffs = ( 0 for [1..(Math.pow(2,quSt.dim))] )
-
-    for i in [0...(Math.pow(2,quSt.dim))]
-        bin = (Q.toBin i, quSt.dim)
-        if (bin[x] == "0") # NOT(|0>) = |1>
-            bin = strReplace(bin, x, "1")
-        else # NOT(|1>) = |0>
-            bin = strReplace(bin, x, "0")
-        newCoeffs[parseInt(bin,2)] += quSt.coeffs[i]
-
-    new QuState quSt.dim, newCoeffs
-
-
-# x = control qubit, y = changed qubit
-CnotGate = (quSt, x,y) ->
-    newCoeffs = ( 0 for [1..(Math.pow(2,quSt.dim))] )
-
-    for i in [0...(Math.pow(2,quSt.dim))]
-        bin = (Q.toBin i, quSt.dim)
-        if (bin[x] == "1")
-            if (bin[y] == "0") # NOT(|0>) = |1>
-                bin = strReplace(bin, y, "1")
-            else # NOT(|1>) = |0>
-                bin = strReplace(bin, y, "0")
-        newCoeffs[parseInt(bin,2)] += quSt.coeffs[i]
-
-    new QuState quSt.dim, newCoeffs
-
-
-#st = new QuState(3, [math.complex(0,4),0,0,4,0,0,0,0])
-#console.log "before measure : " + st.getState()
-#console.log "after  measure : " + st.measure().getState()
-
-
-st2 = new QuState(3, [0,1,0,0,0,0,0,0])
-console.log "SWAP(0,2) : " + st2.getState() + " ---> " + (swap st2, 0, 2).getState()
-
-st3 = new QuState(3, [1,0,0,0,0,0,0,1])
-console.log "HADAMARD(0) : " + st3.getState() + " ---> " + (hadamard st3, 0).getState()
-console.log "HADAMARD ALL : " + st3.getState() + " ---> " + (hadamardAll st3).getState()
-
-st4 = new QuState(3, [0,0,0,0,0,0,0,1])
-console.log "NOT(0) : " + st4.getState() + " ---> " + (notGate st4, 0).getState()
-
-st5 = new QuState(3, [0,0,0,0,1,0,0,0])
-console.log "CNOT(0,2) : " + st5.getState() + " ---> " + (CnotGate st5, 0, 2).getState()
+# testing phase on qubit 1 with controlled qubit 0
+reg7 = new QuRegister "/110>"
+console.log "CPHASE(0,1,e^(-i*PI/4)) : " + reg7.getState() + " ---> " + reg7.cphase(0,1,-(math.PI)/4).getState()

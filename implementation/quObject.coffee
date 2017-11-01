@@ -15,6 +15,7 @@ class QuObject
         ret
 
     # [0,0,0,1,0,0,1,0] -> "00010010"
+    # this function seems useless, since [0,0,0,1,0,0,1,0] != "00010010"
     getStr: (arr) ->
         ret = ""
         for i in [0...arr.length]
@@ -26,3 +27,6 @@ class QuObject
         for i in [0...(dim - bin.length)]
             bin = "0" + bin
         bin
+
+    strReplace: (str, index, replacement) ->
+        str.substr(0, index) + replacement + str.substr(index + replacement.length)

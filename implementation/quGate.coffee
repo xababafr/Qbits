@@ -1,7 +1,7 @@
-math = require 'mathjs'
+#math = require 'mathjs'
 
 #this class represents a quantum state
-class QuGate
+###class QuGate
     constructor: (@dim, @matrix) ->
 
     action(coeffs,targets) ->
@@ -20,6 +20,8 @@ hadamard = new QuGate(1, math.multiply((1/Math.sqrt(2)), math.matrix([
     [1, 1],
     [1,-1]
 ])) )
+# THIS CLASS IS ABANDONNED
+###
 
 # sadly it doesnt really help.....
 

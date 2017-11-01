@@ -15,6 +15,7 @@ class QuObject
         ret
 
     # [0,0,0,1,0,0,1,0] -> "00010010"
+    # this function seems useless, since [0,0,0,1,0,0,1,0] != "00010010"
     getStr: (arr) ->
         ret = ""
         for i in [0...arr.length]
@@ -26,6 +27,9 @@ class QuObject
         for i in [0...(dim - bin.length)]
             bin = "0" + bin
         bin
+
+    strReplace: (str, index, replacement) ->
+        str.substr(0, index) + replacement + str.substr(index + replacement.length)
 # this class represents the quantum state of a register of qubits
 class QuState extends QuObject
     # we suppose coeffs.length == dim
@@ -74,100 +78,183 @@ class QuState extends QuObject
     getState: () ->
         ret = ''
         for i in [0...Math.pow(2,@dim)]
-            if @coeffs[i] != 0
+            if math.norm(@coeffs[i]) != 0
                 ret += '(' + @coeffs[i] + ')*|' + (@toBin i, @dim) + '> + '
         ret.slice(0,-2)
-        #ret.slice(-2)
 
     isMeasured: () ->
         @measured
-# MAIN #
+class QuRegister extends QuObject
+    # give "|001>", "/001>", or [0,1,0,0,0,0,0,0], which represents the same state
+    # later, should add an option to just generate a random register of the dim specified
+    constructor: (st) ->
+        super()
+        if ( (st[0] == "|") || (st[0] == "/") )  &&  ( st[(st.length)-1] == ">" )
+            bin = st.slice(1,(st.length)-1)
+            dim = bin.length
+            arr = ( 0 for [1..(Math.pow(2,dim))] )
+            arr[parseInt(parseInt(bin,2))] = 1
+        else
+            dim = parseInt Math.log2(st.length)
+            arr = st
 
-Q = new QuObject
+        @quState = new QuState dim, arr
 
-strReplace = (str, index, replacement) ->
-    str.substr(0, index) + replacement + str.substr(index + replacement.length)
 
-swap = (quSt, x, y) ->
-    newCoeffs = ( 0 for [1..(Math.pow(2,quSt.dim))] )
-    #console.log newCoeffs
+    getState: () ->
+        @quState.getState()
 
-    for i in [0...(Math.pow(2,quSt.dim))]
-        bin = (Q.toBin i, quSt.dim).split('')
-        [ bin[x], bin[y] ] = [ bin[y], bin[x] ]
-        bin = bin.join('')
-        #console.log "new bin : " + bin
-        newCoeffs[parseInt(bin,2)] = quSt.coeffs[i]
 
-    new QuState quSt.dim, newCoeffs
+    measure: () ->
+        #replace the quState with its value after measurment
+        @quState = @quState.measure()
+        @
 
-hadamard = (quSt, x) ->
-    newCoeffs = ( 0 for [1..(Math.pow(2,quSt.dim))] )
 
-    for i in [0...(Math.pow(2,quSt.dim))]
-        bin = (Q.toBin i, quSt.dim)
-        if (bin[x] == "0") # H(|0>) = ( 1/sqrt(2) )*( |0> + |1> )
-            [c1,c2] = [bin, (strReplace bin, x, "1" )]
-            newCoeffs[parseInt(c1,2)] += (quSt.coeffs[i]/Math.sqrt(2))
-            newCoeffs[parseInt(c2,2)] += (quSt.coeffs[i]/Math.sqrt(2))
-        else # H(|1>) = ( 1/sqrt(2) )*( |0> - |1> )
-            [c1,c2] = [(strReplace bin, x, "0" ), bin]
-            newCoeffs[parseInt(c1,2)] += (quSt.coeffs[i]/Math.sqrt(2))
-            newCoeffs[parseInt(c2,2)] -= (quSt.coeffs[i]/Math.sqrt(2))
+    hadamard: (x) ->
+        dim = @quState.dim
+        newCoeffs = ( 0 for [1..(Math.pow(2,dim))] )
 
-    new QuState quSt.dim, newCoeffs
+        for i in [0...(Math.pow(2,dim))]
+            bin = (@toBin i, dim)
+            if (bin[x] == "0") # H(|0>) = ( 1/sqrt(2) )*( |0> + |1> )
+                [c1,c2] = [bin, (@strReplace bin, x, "1" )]
+                newCoeffs[parseInt(c1,2)] += (@quState.coeffs[i]/Math.sqrt(2))
+                newCoeffs[parseInt(c2,2)] += (@quState.coeffs[i]/Math.sqrt(2))
+            else # H(|1>) = ( 1/sqrt(2) )*( |0> - |1> )
+                [c1,c2] = [(@strReplace bin, x, "0" ), bin]
+                newCoeffs[parseInt(c1,2)] += (@quState.coeffs[i]/Math.sqrt(2))
+                newCoeffs[parseInt(c2,2)] -= (@quState.coeffs[i]/Math.sqrt(2))
 
-hadamardAll = (quSt) ->
-    ret = quSt
-    for i in [0...quSt.dim]
-        ret = hadamard(ret, i)
-    ret
+        @quState = new QuState dim, newCoeffs
+        @
 
-notGate = (quSt, x) ->
-    newCoeffs = ( 0 for [1..(Math.pow(2,quSt.dim))] )
 
-    for i in [0...(Math.pow(2,quSt.dim))]
-        bin = (Q.toBin i, quSt.dim)
-        if (bin[x] == "0") # NOT(|0>) = |1>
-            bin = strReplace(bin, x, "1")
-        else # NOT(|1>) = |0>
-            bin = strReplace(bin, x, "0")
-        newCoeffs[parseInt(bin,2)] += quSt.coeffs[i]
+    hadamardAll: () ->
+        ret = @quState
+        for i in [0...@quState.dim]
+            @hadamard i
+        @
 
-    new QuState quSt.dim, newCoeffs
 
-# x = control qubit, y = changed qubit
-CnotGate = (quSt, x,y) ->
-    newCoeffs = ( 0 for [1..(Math.pow(2,quSt.dim))] )
+    swap: (x, y) ->
+        dim = @quState.dim
+        newCoeffs = ( 0 for [1..(Math.pow(2,dim))] )
 
-    for i in [0...(Math.pow(2,quSt.dim))]
-        bin = (Q.toBin i, quSt.dim)
-        if (bin[x] == "1")
-            console.log bin
-            if (bin[y] == "0") # NOT(|0>) = |1>
-                console.log " --> un"
-                bin = strReplace(bin, y, "1")
+        for i in [0...(Math.pow(2,dim))]
+            bin = (@toBin i, dim).split('')
+            [ bin[x], bin[y] ] = [ bin[y], bin[x] ]
+            bin = bin.join('')
+            newCoeffs[parseInt(bin,2)] = @quState.coeffs[i]
+
+        @quState = new QuState dim, newCoeffs
+        @
+
+
+    not: (x) ->
+        dim = @quState.dim
+        newCoeffs = ( 0 for [1..(Math.pow(2,dim))] )
+
+        for i in [0...(Math.pow(2,dim))]
+            bin = (@toBin i, dim)
+            if (bin[x] == "0") # NOT(|0>) = |1>
+                bin = @strReplace(bin, x, "1")
             else # NOT(|1>) = |0>
-                console.log " --> zero"
-                bin = strReplace(bin, y, "0")
-            console.log bin + "///"
-        newCoeffs[parseInt(bin,2)] += quSt.coeffs[i]
+                bin = @strReplace(bin, x, "0")
+            newCoeffs[parseInt(bin,2)] += @quState.coeffs[i]
 
-    new QuState quSt.dim, newCoeffs
+        @quState = new QuState dim, newCoeffs
+        @
 
-#st = new QuState(3, [math.complex(0,4),0,0,4,0,0,0,0])
-#console.log "before measure : " + st.getState()
-#console.log "after  measure : " + st.measure().getState()
 
-st2 = new QuState(3, [0,1,0,0,0,0,0,0])
-console.log "SWAP(0,2) : " + st2.getState() + " ---> " + (swap st2, 0, 2).getState()
+    cnot: (x,y) ->
+        dim = @quState.dim
+        newCoeffs = ( 0 for [1..(Math.pow(2,dim))] )
 
-st3 = new QuState(3, [1,0,0,0,0,0,0,1])
-console.log "HADAMARD(0) : " + st3.getState() + " ---> " + (hadamard st3, 0).getState()
-console.log "HADAMARD ALL : " + st3.getState() + " ---> " + (hadamardAll st3).getState()
+        for i in [0...(Math.pow(2,dim))]
+            bin = (@toBin i, dim)
+            if (bin[x] == "1")
+                if (bin[y] == "0") # NOT(|0>) = |1>
+                    bin = @strReplace(bin, y, "1")
+                else # NOT(|1>) = |0>
+                    bin = @strReplace(bin, y, "0")
+            newCoeffs[parseInt(bin,2)] += @quState.coeffs[i]
 
-st4 = new QuState(3, [0,0,0,0,0,0,0,1])
-console.log "NOT(0) : " + st4.getState() + " ---> " + (notGate st4, 0).getState()
+        @quState = new QuState dim, newCoeffs
+        @
 
-st5 = new QuState(3, [0,0,0,0,1,0,0,0])
-console.log "CNOT(0,2) : " + st5.getState() + " ---> " + (CnotGate st5, 0, 2).getState()
+
+    phase: (x,phi) ->
+        dim = @quState.dim
+        newCoeffs = ( 0 for [1..(Math.pow(2,dim))] )
+
+        for i in [0...(Math.pow(2,dim))]
+            bin = (@toBin i, dim)
+            if (bin[x] == "1")
+                newCoeffs[parseInt(bin,2)] = math.multiply(math.complex({r : 1, phi : phi}), @quState.coeffs[i])
+            else
+                newCoeffs[parseInt(bin,2)] = @quState.coeffs[i]
+
+        @quState = new QuState dim, newCoeffs
+        @
+
+
+    cphase: (x,y,phi) ->
+        dim = @quState.dim
+        newCoeffs = ( 0 for [1..(Math.pow(2,dim))] )
+
+        for i in [0...(Math.pow(2,dim))]
+            bin = (@toBin i, dim)
+            if (bin[x] == "1" && bin[y] == "1")
+                newCoeffs[parseInt(bin,2)] = math.multiply(math.complex({r : 1, phi : phi}), @quState.coeffs[i])
+            else
+                newCoeffs[parseInt(bin,2)] = @quState.coeffs[i]
+
+        @quState = new QuState dim, newCoeffs
+        @
+
+#reg = new QuRegister "/001>"
+#reg2 = new QuRegister [0,1,0,0,0,0,0,0]
+#reg3 = new QuRegister "|001>"
+#reg4 = new QuRegister "/110>"
+###
+
+pour la classe QuRegister, chaque porte retourne this ( = @) pour pouvoir chainer les appels. Malgré cette possibilité, j'ai décidé que chaque appel à un porte modifierait l'objet en lui meme . Ainsi, on peux faire myreg.unePorteQuantique() puis observer myReg : il aura subit les modifications de la porte concernée.
+
+Concernant la manière de coder les portes, pour le moment, je n'ai pas utilisé les matrices, car ça m'a aidé à mieux comprendre de faire ça "à la main". Dans l'avenir, je repasserai peut etre par la représentation matricielle. Je me demande cela dit s'il n'y a pas un léger gachis de calculs en utilisant les matrices.
+
+###
+
+# testing measure()
+reg0 = new QuRegister [math.complex(0,4),0,0,4,0,0,0,0]
+console.log "before measure : " + reg0.getState()
+reg0.measure()
+console.log "after  measure : " + reg0.getState()
+
+# testing hadamard
+reg1 = new QuRegister [1,0,0,0,0,0,1,0]
+console.log "HADAMARD(0) : " + reg1.getState() + " ---> " + reg1.hadamard(0).getState()
+
+# testing hadamard on all qubits
+reg2 = new QuRegister [1,0,0,0,0,0,1,0]
+console.log "HADAMARD ALL : " + reg2.getState() + " ---> " + reg2.hadamardAll().getState()
+
+# testing swap on qubits 0 and 2
+reg3 = new QuRegister "|001>" # = [0,1,0,0,0,0,0,0]
+console.log "SWAP(0,2) : " + reg3.getState() + " ---> " + reg3.swap(0,2).getState()
+
+# testing not on qubit 0
+reg4 = new QuRegister "|001>"
+console.log "NOT(0) : " + reg4.getState() + " ---> " + reg4.not(0).getState()
+
+# testing cnot on qubit 2 with controlled qubit 0
+reg5 = new QuRegister [0,0,0,0,1,0,0,0]
+console.log "CNOT(0,2) : " + reg5.getState() + " ---> " + reg5.cnot(0,2).getState()
+
+# testing phase on qubit 1
+reg6 = new QuRegister "/010>"
+console.log "PHASE(1,e^(i*PI/4)) : " + reg6.getState() + " ---> " + reg6.phase(1,(math.PI)/4).getState()
+
+# testing phase on qubit 1 with controlled qubit 0
+reg7 = new QuRegister "/110>"
+console.log "CPHASE(0,1,e^(-i*PI/4)) : " + reg7.getState() + " ---> " + reg7.cphase(0,1,-(math.PI)/4).getState()
