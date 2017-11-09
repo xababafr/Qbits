@@ -120,7 +120,7 @@ Une loi de composition interne $\star{}$ sur l'ensemble $X$ est une aplication d
 		\subsection{Anneaux et corps}
 
 \par{
-	Disposant de la définition d'un corps commutatif, nous pouvons maintenant donner la définition d'un anneau commutatif. Soit $A$ un ensemble non vide, muni de deux lois de compositions interne \oplus et \otimes.
+	Disposant de la définition d'un corps commutatif, nous pouvons maintenant donner la définition d'un anneau commutatif. Soit $A$ un ensemble non vide, muni de deux lois de compositions interne $\oplus$ et $\otimes$.
 }
 
 \par{
@@ -179,8 +179,8 @@ $\prodSc{\cdot}{\cdot} : \left\{
   \end{array}
 \right$
 \item[$\bullet$] symétrie : $ \forall (u,v) \in E^2, \prodSc{u}{v} = \prodSc{v}{u} $
-\item[$\bullet$] linéarité (de la symétrie découle alors la bi-linéarité) : $\forall (u,v,w) \in E^3, \proSc{u}{v+w}= \prodSc{u}{v} + \prodSc{u}{w}$
-\item[$\bullet$] defini positif : $\forall u \in E, \proSc{u}{u} \geq 0$ et $\forall u \in E, \prodSc{u}{u} = 0 \Lefrightarrow u = 0_{E}$
+\item[$\bullet$] linéarité à droite : $\forall (u,v,w) \in E^3, \prodSc{u}{v+w} = \prodSc{u}{v} + \prodSc{u}{w}$ (de la symétrie et la linéarité découle alors la bi-linéarité)
+\item[$\bullet$] defini positif : $\forall u \in E, \prodSc{u}{u} \geq 0$ et $\forall u \in E, \prodSc{u}{u} = 0 \Lefrightarrow u = 0_{E}$
 \end{itemize}
 
 \vspace{1\baselineskip}
@@ -230,12 +230,12 @@ N( \cdot ) : \left\{
 	C'est dans un tel espace que nous allons travailler pour définir nos QuBits.
 }
 
-	\section{Application aux QuBits ( + sphere de bloch)}
+	\section{Application aux QuBits}
 
 		\subsection{Définition d'un QuBit}
 
 \par{
-	Notons dans toute la suite $\mathbb{H}_{n}$ un espace de Hilbert complexe et de dimension $n$. Un vecteur quelconque de l'espace $\mathbb{H}_{2}$ est donc défini par : $\quSt{\Phi} = \lambda \quSt{0} + \mu \quSt{1}$, où $\lambda$ et $\mu$ sont des coefficient complexes, et où $\quSt{0}$ ainsi que $\quSt{1} $ sont deux vecteurs formant une base orthonormée de $\mathbb{H}_{2}$ (les deux vecteurs sont orthogonaux et de norme 1). Le produit scalaire de deux vecteurs est alors défini par \ref{prodScH2}), et la norme induite sera (\ref{normeH2}).
+	Notons dans toute la suite $\mathbb{H}_{n}$ un espace de Hilbert complexe et de dimension $n$. Un vecteur quelconque de l'espace $\mathbb{H}_{2}$ est donc défini par : $\quSt{\Phi} = \lambda \quSt{0} + \mu \quSt{1}$, où $\lambda$ et $\mu$ sont des coefficient complexes, et où $\quSt{0}$ ainsi que $\quSt{1} $ sont deux vecteurs formant une base orthonormée de $\mathbb{H}_{2}$ (les deux vecteurs sont orthogonaux et de norme 1). Le produit scalaire de deux vecteurs est alors défini par (\ref{prodScH2}), et la norme induite sera (\ref{normeH2}).
 }
 
 \begin{equation} \label{prodScH2}
@@ -249,7 +249,7 @@ N( \cdot ) : \left\{
 \vspace{1\baselineskip}
 
 \par{
-	Un QuBit isolé est alors défini comme un vecteur de cet espace $\mathbb{H}_{2}$ (voir \ref{QuBit} ) auquel on ajoute une conditionsur la norme : la condition de normalisation (\ref{normalisation}). Si cette dernière n'est pas indispensable, elle est commode et constamment utilisé dans la littérature, nous l'adopterons donc également.
+	Un QuBit isolé est alors défini comme un vecteur de cet espace $\mathbb{H}_{2}$ (voir \ref{QuBit} ) auquel on ajoute une condition sur la norme : la condition de normalisation (\ref{normalisation}). Si cette dernière n'est pas indispensable, elle est commode et constamment utilisé dans la littérature, nous l'adopterons donc également.
 }
 
 \begin{equation} \label{QuBit}
@@ -257,13 +257,13 @@ N( \cdot ) : \left\{
 \end{equation}
 
 \begin{equation} \label{normalisation}
-	(\alpha,\beta) \in \mathbb{C}^2 / |\alpha|^2 + |\beta|^2 = 1
+	(\alpha,\beta) \in \mathbb{C}^2 ~/~ |\alpha|^2 + |\beta|^2 = 1
 \end{equation}
 
 		\subsection{QuBit et mesure}
 
 \par{
-	La mesure d'un QuBit corresponds à une application $\mathbb{M} : \mathbb{H}_{2} \rightarrow \{ \quSt{0}, \quSt{1} \}$ : on prends un QuBit et on détermine si ce dernier "était" dans l'état $\quSt{0}$ ou $\quSt{1}$. Mais comme vu dans la première partie de ce rapport, la mesure en mécanique quantique n'est pas une chose exacte : en effet, si le QBit était de la forme $\quSt{Q} = \quSt{0}$, et que l'on mesure la probabilité que ce dernier soit dans l'état $\quSt{0}$, nous obtiendrons bel et bien 100\%. De même, si $\quSt{Q} = \quSt{1}$, nous obtiendrons une probabilité de 0\%. En revanche, dans le cas général, tout se complique. Soit $\quSt{\omega}$ un vecteur de $\mathbb{H}_{2}$. Nous voulons connaître la probabilité selon laquelle notre QuBit sera mesuré dans l'état $\quSt{\Omega}$. Elle est définie par (\ref{probaState}).
+	La mesure d'un QuBit corresponds à une application $\mathbb{M} : \mathbb{H}_{2} \rightarrow \{ \quSt{0}, \quSt{1} \}$ : on choisis un QuBit quelconque, et la mesure nous donnera soit l'état $\quSt{0}$, soit l'état $\quSt{1}$. Mais comme vu dans la première partie de ce rapport, la mesure en mécanique quantique n'est pas une opération déterministe : en effet, si le QuBit était de la forme $\quSt{Q} = \quSt{0}$, et que l'on mesure la probabilité que ce dernier soit dans l'état $\quSt{0}$, nous obtiendrons bel et bien 100\%. De même, si $\quSt{Q} = \quSt{1}$, nous obtiendrons une probabilité de 0\%. En revanche, dans le cas général, tout se complique. Soit $\quSt{\omega}$ un vecteur de $\mathbb{H}_{2}$. Nous voulons connaître la probabilité selon laquelle notre QuBit sera mesuré dans l'état $\quSt{\Omega}$. Elle est définie par (\ref{probaState}).
 }
 
 \begin{equation} \label{probaState}
@@ -273,7 +273,7 @@ N( \cdot ) : \left\{
 \vspace{1\baselineskip}
 
 \par{
-	La conséquence logique des dernières affirmations est que pour un QuBit de la forme $\quSt{Q} = \alpha \cdot \quSt{0} + \beta \cdot \quSt{1}$, ses probbilités d'être mesuré dans l'état $\quSt{0}$ est de $\lambda^2$, et celle d'être mesuré dans l'état $\quSt{1}$ est de $\mu^2$. la condition de normalisation (\ref{normalisation}) prends alors tout son sens : la somme des probabilités de deux évènements formant un ensemble complet vaut 1. Ce résultat se généralise pour n'importe quel couple d'etats , tant que ces derniers forment une base orthonormée.
+	La conséquence logique des dernières affirmations est que pour un QuBit de la forme $\quSt{Q} = \alpha \cdot \quSt{0} + \beta \cdot \quSt{1}$, sa probbilité d'être mesuré dans l'état $\quSt{0}$ est de $\lambda^2$, et celle d'être mesuré dans l'état $\quSt{1}$ est de $\mu^2$. la condition de normalisation (\ref{normalisation}) prends alors tout son sens : la somme des probabilités de deux évènements formant un ensemble complet vaut 1. Ce résultat se généralise pour n'importe quel couple d'etats , tant que ces derniers forment une base orthonormée.
 }
 
 		\subsection{Visualisation avec la sphère de Bloch}
@@ -316,7 +316,7 @@ N( \cdot ) : \left\{
 
 \begin{align}
 	P(~ M( z \quSt{\Psi} ) = \quSt{\alpha} ~) &= \prodSc{z \quSt{\Psi}}{\quSt{\alpha}} \\
-	 &= |z| \prodSc{\quSt{\Psi}}{\quSt{\alpha}} \\
+	 &= |e^{i\theta}| \prodSc{\quSt{\Psi}}{\quSt{\alpha}} \\
 	 &= P(~ M( \quSt{\Psi} ) = \quSt{\alpha} ~)
 \end{align}
 
@@ -356,14 +356,14 @@ Sous cette nouvelle forme, il est possible de représenter tout QuBit pur comme 
 	\label{tensoriel}
 	(\cdot) \otimes (\cdot) : \left\{
 	  \begin{array}{rcr}
-	    \mathbb{H_1}^2 \times \mathbb{H_2}^2 \rightarrow \mathbb{H}^4 \hfill \\
+	    \mathbb{H}^2 \times \mathbb{H}^2 \rightarrow \mathbb{H}^4 \hfill \\
 	    (\quSt{\varphi},\quSt{\Psi}) \mapsto \quSt{\varphi} \otimes \quSt{\Psi} = \left( \begin{array}{c} \alpha \\ \beta \\\end{array} \right ) \otimes \left( \begin{array}{c} \lambda \\ \mu \\ \end{array} \right ) = \left( \begin{array}{c} \alpha \lambda \\ \alpha \mu \\ \beta \lambda \\ \beta \mu \end{array} \right ) \\
 	  \end{array}
 	\right
 \end{equation}
 
 \para{
-	Le produit tensoriel de deux espaces $\mathbb{H_i}^2$, qui corresponds à l'espace dans lequel deux QuBits existent, est défini par un espace dont la base est égale à toutes les combinaisons possibles de produit tensoriels entre les vecteurs de bases des deux espaces de départ. C'est donc un espace de dimension 4 ayant pour base orthonormée :
+	Le produit tensoriel de deux espaces $\mathbb{H}^2$, qui corresponds à l'espace dans lequel deux QuBits existent, est défini par un espace dont la base est égale à toutes les combinaisons possibles de produit tensoriels entre les vecteurs de bases des deux espaces de départ. C'est donc un espace de dimension 4 ayant pour base orthonormée :
 }
 
 \begin{equation}
@@ -393,13 +393,19 @@ Sous cette nouvelle forme, il est possible de représenter tout QuBit pur comme 
 \vspace{1\baselineskip}
 
 \par{
-	Les états quantiques n'étant pas purs sont dits intriqués, et l'existence de ces derniers a remis en cause le principe de localité que nous avons évoqués dans la partie 1. En effet, si l'on considère l'état de Bell : $\quSt{\Psi} = \frac{1}{\sqrt{2}} \cdot (~ \quSt{00} + \quSt{11}  ~)$. Alors une mesure de l'un des deux QuBit dans sa base respective nous donnera immédiatement l'information de la mesure du second QuBit dans sa propre base, même si les deux QuBit, après intrication, sont séparés d'un potentielle très grande distance\footnote{Des tests expérimentaux confirme cet effet pour une distance supérieure à 10km.}.
+	Les états quantiques n'étant pas purs sont dits intriqués, et l'existence de ces derniers a remis en cause le principe de localité que nous avons évoqués dans la partie 1. En effet, si l'on considère l'état de Bell : $\quSt{\Psi} = \frac{1}{\sqrt{2}} \cdot (~ \quSt{00} + \quSt{11}  ~)$, alors une mesure de l'un des deux QuBit dans sa base respective nous donnera immédiatement l'information de la mesure du second QuBit dans sa propre base, même si les deux QuBit, après intrication, sont séparés d'un potentielle très grande distance\footnote{Des tests expérimentaux confirme de nos jours cet effet pour une distance supérieure à 10km.}.
 }
 
 \vspace{1\baselineskip}
 
 \par{
-	Il semblerait tentant de faire un parallèle à l'informatique classique : deux bits peuvent ainsi former un registre dans seulement 4 états possibles : ${ 00, 01, 10, 11 }$. Cependant, là où il n'y a que quatre possibilités fixes en informatique classiques, il est nécessaire de se rappeler que dans $\mathbb{H}^4$, les vecteurs / registres de deux QuBits sont des combinaisons linéaires des vecteurs $ \{ \quSt{00}, \quSt{01}, \quSt{10}, \quSt{11} \} $. Les possibilités sont donc immenses, et tant qu'aucune mesure n'est effectuée, l'état quantique est maintenu (nous ne reparlerons par ici des problèmes de décohérence présentés en partie 1), conservant ainsi l'incertitude qui fait la force de l'informatique quantique. Ainsi, chaque ajout de QuBit augmente exponentiellement le nombre de combinaisons possibles comparées aux combinaisons "classiques".
+	Il semblerait tentant de faire un parallèle à l'informatique classique : deux bits peuvent ainsi former un registre dans seulement 4 états possibles : ${ 00, 01, 10, 11 }$. Cependant, là où il n'y a que quatre possibilités fixes en informatique classiques, il est nécessaire de se rappeler que dans $\mathbb{H}^4$, les vecteurs / registres de deux QuBits sont des combinaisons linéaires des vecteurs $ \{ \quSt{00}, \quSt{01}, \quSt{10}, \quSt{11} \} $. Cela veut donc dire qu'avant une mesure, un registre de QuBit effectue simultanément les calculs pour \emph{chacune} des quatre possibilitées. Pour un registre de deux QuBit, nous avons donc $4 = 2^2$ calculs effectués en parallèle. Un registre de trois QuBits réaliserait ainsi $8 = 2^3$ calculs en parallèle. Ainsi, chaque ajout de QuBit augmente exponentiellement (en $2^n$, où $n$ est le nombre de QuBits du registre quantique concerné) la puissance de calcul comparé à l'équivalent registre composé de bits classiques.
+}
+
+\vspace{1\baselineskip}
+
+\par{
+	Il convient en revanche de clarifier les affirmations faites précédemment. Un registre quantique de taille $n$ fera effectivement $2^n$ calculs en parallèle. En revanche, avant une mesure, il nous est impossible d'exploiter cette puissance de calcul, et post-mesure, nous n'obtiendrons qu'un seul résultat. C'est pour cela que la puissance quantique ne s'applique pas à tout type de problème, et qu'il est si dur de créer de nouveaux algorithme quantiques : en plus d'obéir à une nouvelle forme de logique, il est nécessaire de créer un algorithme utilisant cette puissance de calcul en parallèle, mais dont le résultat final ne nécessite qu'une seule valeur\footnote{Dans la dernière section sont rapidement présentés quelques algorithmes quantiques réputés. }.
 }
 
 	\section{Portes logiques}
@@ -407,13 +413,13 @@ Sous cette nouvelle forme, il est possible de représenter tout QuBit pur comme 
 		\subsection{évolution dans le temps d'un QuBit}
 
 \par{
-	Les relations établies dans les parties précédentes ont été écrites dans un espace $\mathbb{H}^2$ concernant un unique QuBit, puis généralisées à un ensemble de deux QuBit. Le passage à un nombre supérieur de QuBit s'effectuera exactement de la même manière, avec le produit tensoriel, défini de manière légèrement plus généralisée, pour pouvoir s'appliquer à deux espaces $\mathbb{H1}$ et $\mathbb{H2}$ de dimension quelconque.
+	Les relations établies dans les parties précédentes ont été écrites dans un espace $\mathbb{H}^2$ concernant un unique QuBit, puis généralisées à un ensemble de deux QuBit. Le passage à un nombre supérieur de QuBit s'effectuera exactement de la même manière, avec le produit tensoriel, défini de manière légèrement plus généralisée, pour pouvoir s'appliquer à deux espaces $\mathbb{H}_{1}$ et $\mathbb{H}_{2}$ de dimension quelconque.
 }
 
 \vspace{1\baselineskip}
 
 \par{
-	Nous pouvons donc désormais considérer un état quantique appartenant à un espace $\mathbb{H}^{2^n}$ , c'est-à-dire un registre composé de n QuBits. Notons cet espace plus simplement $\mathbb{H}^{\otimes n}$. Il est alors possible de donner l'équation de Schrödinger, qui décrit l'évolution dans le temps de tout état quantique précédant une mesure par :
+	Nous pouvons donc désormais considérer un état quantique appartenant à un espace $\mathbb{H}^{2^n}$ , c'est-à-dire un registre composé de $n$ QuBits. Notons cet espace plus simplement $\mathbb{H}^{\otimes n}$. Il est alors possible de donner l'équation de Schrödinger, qui décrit l'évolution dans le temps de tout état quantique précédant une mesure par :
 }
 
 \begin{equation}
@@ -423,7 +429,7 @@ Sous cette nouvelle forme, il est possible de représenter tout QuBit pur comme 
 \vspace{1\baselineskip}
 
 \par{
-	Où $H$ est l'opérateur Hamiltonien. Dans ce cas particulier de la résolution de l'équation de Schrödinger (pour l'instant, j'ai du mal à comprendre parfaitement d'où sortent les hypothèses menant aux simplifications donnant l'equation ci-dessus), nous avons tout simplement une solution de la forme $\Psi(t) = U(t) \Psi(0)$, où $U(t) = e^{-itH}$. Notons que cette évolution temporelle ne modifie pas la norme de l'état quantique $\Psi$.
+	Où $H$ est l'opérateur Hamiltonien. Dans ce cas particulier de la résolution de l'équation de Schrödinger \emph{(pour l'instant, j'ai du mal à comprendre parfaitement d'où sortent les hypothèses menant aux simplifications donnant l'equation ci-dessus)}, nous avons tout simplement une solution de la forme $\Psi(t) = U(t) \Psi(0)$, où $U(t) = e^{-itH}$. Notons que cette évolution temporelle ne modifie pas la norme de l'état quantique $\Psi$.
 }
 
 		\subsection{algèbre des portes logiques}
@@ -449,7 +455,7 @@ Sous cette nouvelle forme, il est possible de représenter tout QuBit pur comme 
 \end{align}
 
 \par{
-	C'est donc simplement une application linéaire qui a un nombre donné de QuBit tous de même dimension, renvoi un même nombre de QuBits dans un état potentiellement différent. Une porte quantique n'effectuant pas de mesure, il est nécessaire que la transformation maintienne la condition de normalité. Au final, pour représenter une porte logique, il suffira d'utiliser une matrice $M$ de norme 1. L'état de chaque QuBit après passage dans $L$ sera ainsi facilement calculé par $L(\Psi) = M \cdot \Psi$ . Par définition, il apparait que le calcul quantique est spontanément réversible.
+	C'est donc simplement une application linéaire qui a un nombre donné de QuBit tous de même dimension, renvoi un même nombre de QuBits dans un état potentiellement différent. Une porte quantique n'effectuant pas de mesure, il est nécessaire que la transformation maintienne la condition de normalité. Au final, pour représenter une porte logique, il suffira d'utiliser une matrice $M$ de norme 1. L'état de chaque QuBit après passage dans $L$ sera ainsi facilement calculé par $L(\Psi) = M \cdot \Psi$ . Par définition, il apparait que le calcul quantique est spontanément réversible. On en déduit ainsi que toute matrice définissant une porte logique quantique sera inversible (donc de déterminant non nul).
 }
 
 		\subsection{portes logiques à 1 QuBit}
@@ -469,7 +475,7 @@ Sous cette nouvelle forme, il est possible de représenter tout QuBit pur comme 
 \vspace{1\baselineskip}
 
 \par{
-	La première porte ajoute un vecteur de phase à $\quSt{1}$, tandis que la seconde effectue une rotation de $\alpha$ du QuBit. Ces transformations rappellent exactement la définition d'un point sur la sphère de Bloch (equation \ref{blochEq}), ce qui nous permet d'affirmer qu'il est effectivement possible d'aboutir à n'importe quelle transformation à partir de ces deux portes logiques. On peux ainsi définir la classique porte NOT (négation du QuBit) et la porte de Hadamard :
+	La première porte ajoute un vecteur de phase à la composante en $\quSt{1}$, tandis que la seconde effectue une rotation de $\alpha$ du QuBit. Ces transformations rappellent exactement la définition d'un point sur la sphère de Bloch (equation \ref{blochEq}), ce qui nous permet d'affirmer qu'il est effectivement possible d'aboutir à n'importe quelle transformation à partir de ces deux portes logiques. On peux ainsi définir la classique porte NOT (négation du QuBit) et la porte de Hadamard :
 }
 
 \begin{equation}
@@ -483,19 +489,19 @@ Sous cette nouvelle forme, il est possible de représenter tout QuBit pur comme 
 \vspace{1\baselineskip}
 
 \par{
-	Si l'interprétation de la porte $NOT$ est immédiate, il convient de revenir rapidement sur la porte de $HADAMARD$. C'est une porte indispensable en programmation quantique: en effet, elle sert souvent de première étape lors d'un algorithme, pour faire passer un registre d'un état initial $\quSt{0}_i$ pour chacun de ses QuBit à un état final de superposition des $2^n$ états $\quSt{0}_i$ et $\quSt{1}_i$ de podération/norme égale à $\frac{1}{2}$.
+	Si l'interprétation de la porte $NOT$ est immédiate, il convient de revenir rapidement sur la porte de $HADAMARD$. C'est une porte indispensable en programmation quantique : en effet, elle sert souvent de première étape lors d'un algorithme, pour faire passer un registre d'un état initial $\quSt{0}_i$ pour chacun de ses QuBit à un état final de superposition des $2^n$ états $\quSt{0}_i$ et $\quSt{1}_i$ de norme toutes égales.
 }
 
 		\subsection{portes logiques à 2 QuBit (j'ai choisi de pas parler de la porte CU)}
 
 \par{
-	Les portes logiques à deux QuBit suivent toutes une logique similaire : l'un des deux QuBit est appelé QuBit contrôle, et l'autre QuBit cible (usuellement, nous les "positionnons" dans cet ordre). L'idée est alors de contrôler l'état du QuBit de contrôle, et d'agir -ou non- sur le QuBit cible en fonction du résultat.
+	Certaines portes logiques à deux QuBit suivent une certaine logique : l'un des deux QuBit est appelé QuBit contrôle (d'où $CNOT = Controlled \text{ } NOT$), et l'autre QuBit cible (usuellement, nous les "positionnons" dans cet ordre). L'idée est alors de vérifier l'état du QuBit de contrôle, et d'agir -ou non- sur le QuBit cible en fonction da la valeur du QuBit de contrôle.
 }
 
 \vspace{1\baselineskip}
 
 \par{
-	Nous pouvons alors très facilement définir deux premières portes quantiques sur deux QuBits : la porte $CNOT$ qui appliquera ou non la transformation $NOT$ sur le QuBit cible, et la porte $CPHASE$ qui appliquera potentiellement une phase au QuBit ciblé. Enfin, la porte $SWAP$ va simplement échanger les composantes $\quSt{01}$ et $\quSt{}$. Voici leur matrices :
+	Nous pouvons alors très facilement définir deux premières portes quantiques sur deux QuBits : la porte $CNOT$ qui appliquera ou non la transformation $NOT$ sur le QuBit cible, et la porte $CPHASE$ qui appliquera potentiellement une phase au QuBit ciblé. Enfin, la porte $SWAP$ va simplement échanger les composantes $\quSt{01}$ et $\quSt{10}$. Voici leur matrices :
 }
 
 \begin{equation}
@@ -517,7 +523,7 @@ Sous cette nouvelle forme, il est possible de représenter tout QuBit pur comme 
 		\subsection{Ensemble universel}
 
 \par{
-	Un ensemble universel est un ensemble de portes quantiques tel que tout calcul quantique soit décomposable en opération composées de ces différentes portes. Les ensembles $\{PHASE,ROTATION,CPHASE\}$ et $\{PHASE,ROTATION,CNOT\}$ (PREUVE?!) sont de tels ensembles universels. En effet, avec les deux premières portes, toute opération sur un unique QuBit est réalisable, tandis qu'avec la porte $CPHASE$ ou $CNOT$, une intrication est possible, ce qui permet de "descendre en dimension" et donc assurer que tout calcul est réalisable.
+	Un ensemble universel est un ensemble de portes quantiques tel que tout calcul quantique soit décomposable en opération composées de ces différentes portes. Les ensembles $\{PHASE,ROTATION,CPHASE\}$ et $\{PHASE,ROTATION,CNOT\}$ \emph{(PREUVE?!)} sont de tels ensembles universels. En effet, avec les deux premières portes, toute opération sur un unique QuBit est réalisable, tandis qu'avec la porte $CPHASE$ ou $CNOT$, une intrication est possible, ce qui permet de "descendre en dimension" et donc assurer que tout calcul est réalisable.
 }
 
 \chapter{Simulation d'algorithme quantiques}

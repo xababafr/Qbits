@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.9)  16 OCT 2017 23:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.9)  5 NOV 2017 15:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -795,31 +795,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
-./Report.tex:123: Missing $ inserted.
-<inserted text> 
-                $
-l.123 ... deux lois de compositions interne \oplus
-                                                   et \otimes.
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./Report.tex:124: Extra }, or forgotten $.
-l.124 }
-       
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./Report.tex:125: Missing $ inserted.
-<inserted text> 
-                $
-l.125 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
 [6
 
 ]
@@ -834,29 +809,6 @@ should probably delete the `{' by typing `1' now, so that
 braces don't get unbalanced. Otherwise just proceed.
 Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
-
-./Report.tex:182: Undefined control sequence.
-l.182 ...ritÃ©) : $\forall (u,v,w) \in E^3, \proSc
-                                                  {u}{v+w}= \prodSc{u}{v} + ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (16.08032pt too wide) in paragraph at lines 182--183
-[]\T1/cmr/m/n/12 linéarité (de la sy-mé-trie dé-coule alors la bi-linéarité) : $\OMS/cmsy/m/n/12 8\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u; v; w\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 E[]; u[] \OT1/cmr/m/n/12 =
- []
-
-./Report.tex:183: Undefined control sequence.
-l.183 ...defini positif : $\forall u \in E, \proSc
-                                                  {u}{u} \geq 0$ et $\forall...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 ./Report.tex:183: Undefined control sequence.
 l.183 ...u \in E, \prodSc{u}{u} = 0 \Lefrightarrow
@@ -994,30 +946,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [11]
-./Report.tex:449: Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.449 \end{align}
-                 
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-./Report.tex:449: Missing delimiter (. inserted).
-<to be read again> 
-                   \let 
-l.449 \end{align}
-                 
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1025,6 +953,30 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [12]
+./Report.tex:455: Missing delimiter (. inserted).
+<to be read again> 
+                   }
+l.455 \end{align}
+                 
+I was expecting to see something like `(' or `\{' or
+`\}' here. If you typed, e.g., `{' instead of `\{', you
+should probably delete the `{' by typing `1' now, so that
+braces don't get unbalanced. Otherwise just proceed.
+Acceptable delimiters are characters whose \delcode is
+nonnegative, or you can use `\delimiter <delimiter code>'.
+
+./Report.tex:455: Missing delimiter (. inserted).
+<to be read again> 
+                   \let 
+l.455 \end{align}
+                 
+I was expecting to see something like `(' or `\{' or
+`\}' here. If you typed, e.g., `{' instead of `\{', you
+should probably delete the `{' by typing `1' now, so that
+braces don't get unbalanced. Otherwise just proceed.
+Acceptable delimiters are characters whose \delcode is
+nonnegative, or you can use `\delimiter <delimiter code>'.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1032,7 +984,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [13]
-Overfull \hbox (19.43216pt too wide) in paragraph at lines 520--522
+Overfull \hbox (19.43216pt too wide) in paragraph at lines 526--528
 \T1/cmr/m/n/12 en-sembles $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 PHASE; ROTATION; CPHASE\OMS/cmsy/m/n/12 g$ \T1/cmr/m/n/12 et $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 PHASE; ROTATION; CNOT\OMS/cmsy/m/n/12 g$
  []
 
@@ -1043,14 +995,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [14]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15]
 Chapitre 4.
-[15
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 538--539
-
- []
-
 [16
 
 ]
@@ -1060,13 +1012,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 544--545
 
 [17
 
-] [18
+]
+Underfull \hbox (badness 10000) in paragraph at lines 550--551
+
+ []
+
+[18
+
+] [19
 
 ] (./Report.aux) )
-(\end occurred inside a group at level 3)
+(\end occurred inside a group at level 2)
 
-### simple group (level 3) entered at line 286 ({)
-### simple group (level 2) entered at line 122 ({)
+### simple group (level 2) entered at line 286 ({)
 ### simple group (level 1) entered at line 110 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
@@ -1076,14 +1034,14 @@ Here is how much of TeX's memory you used:
  9789 multiletter control sequences out of 15000+600000
  27059 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,15n,43p,903b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,15n,43p,1028b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2017/texmf-dis
 t/fonts/type1/public/cm-super/sfsl1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Report.pdf (19 pages, 361734 bytes).
+Output written on Report.pdf (20 pages, 368219 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 124 compressed objects within 2 object streams
+ 178 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

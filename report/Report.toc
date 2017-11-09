@@ -12,18 +12,18 @@
 \contentsline {subsection}{\numberline {3.1.2}Anneaux et corps}{6}
 \contentsline {subsection}{\numberline {3.1.3}espace vectoriel et produit scalaire}{6}
 \contentsline {subsection}{\numberline {3.1.4}norme induite, suites de Cauchy et espace de Hilbert}{7}
-\contentsline {section}{\numberline {3.2}Application aux QuBits ( + sphere de bloch)}{8}
+\contentsline {section}{\numberline {3.2}Application aux QuBits}{8}
 \contentsline {subsection}{\numberline {3.2.1}D\IeC {\'e}finition d'un QuBit}{8}
 \contentsline {subsection}{\numberline {3.2.2}QuBit et mesure}{8}
 \contentsline {subsection}{\numberline {3.2.3}Visualisation avec la sph\IeC {\`e}re de Bloch}{9}
 \contentsline {subsection}{\numberline {3.2.4}extension \IeC {\`a} plusieurs QuBits}{10}
 \contentsline {section}{\numberline {3.3}Portes logiques}{12}
 \contentsline {subsection}{\numberline {3.3.1}\IeC {\'e}volution dans le temps d'un QuBit}{12}
-\contentsline {subsection}{\numberline {3.3.2}alg\IeC {\`e}bre des portes logiques}{12}
+\contentsline {subsection}{\numberline {3.3.2}alg\IeC {\`e}bre des portes logiques}{13}
 \contentsline {subsection}{\numberline {3.3.3}portes logiques \IeC {\`a} 1 QuBit}{13}
 \contentsline {subsection}{\numberline {3.3.4}portes logiques \IeC {\`a} 2 QuBit (j'ai choisi de pas parler de la porte CU)}{14}
-\contentsline {subsection}{\numberline {3.3.5}Ensemble universel}{14}
-\contentsline {chapter}{\numberline {4}Simulation d'algorithme quantiques}{15}
-\contentsline {section}{\numberline {4.1}Algorithme de Shor}{15}
-\contentsline {section}{\numberline {4.2}Algorithme de Grover}{15}
-\contentsline {chapter}{Conclusion}{16}
+\contentsline {subsection}{\numberline {3.3.5}Ensemble universel}{15}
+\contentsline {chapter}{\numberline {4}Simulation d'algorithme quantiques}{16}
+\contentsline {section}{\numberline {4.1}Algorithme de Shor}{16}
+\contentsline {section}{\numberline {4.2}Algorithme de Grover}{16}
+\contentsline {chapter}{Conclusion}{17}

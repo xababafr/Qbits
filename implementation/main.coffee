@@ -39,3 +39,13 @@ console.log "PHASE(1,e^(i*PI/4)) : " + reg6.getState() + " ---> " + reg6.phase(1
 # testing phase on qubit 1 with controlled qubit 0
 reg7 = new QuRegister "/110>"
 console.log "CPHASE(0,1,e^(-i*PI/4)) : " + reg7.getState() + " ---> " + reg7.cphase(0,1,-(math.PI)/4).getState()
+
+console.log "\n\n ------------------------------------------------------------------- \n\n"
+
+reg8 = new QuRegister "/010>"
+reg8.p('Init')
+    .hadamard(1).p('Hadamard(1)')
+    .swap(0,1)  .p( 'Swap(0,1)' )
+    .cnot(0,2)  .p( 'Cnot(0,2)' )
+    .not(0)     .p(   'Not(0)'  )
+    .measure()  .p(' Measure()' )

@@ -18,6 +18,10 @@ class QuRegister extends QuObject
     getState: () ->
         @quState.getState()
 
+    p: (st) ->
+        console.log '[' + st + '] '+ @getState()
+        @
+
 
     measure: () ->
         #replace the quState with its value after measurment
@@ -126,8 +130,3 @@ class QuRegister extends QuObject
 
         @quState = new QuState dim, newCoeffs
         @
-
-#reg = new QuRegister "/001>"
-#reg2 = new QuRegister [0,1,0,0,0,0,0,0]
-#reg3 = new QuRegister "|001>"
-#reg4 = new QuRegister "/110>"
