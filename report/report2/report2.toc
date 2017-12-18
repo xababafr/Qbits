@@ -1,0 +1,18 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Simulation informatique}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Rappels math\IeC {\'e}matiques}{2}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Loi de composition interne et groupe}{2}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Anneaux et corps}{2}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}espace vectoriel et produit scalaire}{3}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.1.4}norme induite, suites de Cauchy et espace de Hilbert}{3}{subsection.1.1.4}
+\contentsline {section}{\numberline {1.2}Application aux QuBits}{4}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}D\IeC {\'e}finition d'un QuBit}{4}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}QuBit et mesure}{4}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Visualisation avec la sph\IeC {\`e}re de Bloch}{5}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}extension \IeC {\`a} plusieurs QuBits}{6}{subsection.1.2.4}
+\contentsline {section}{\numberline {1.3}Portes logiques}{8}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}\IeC {\'e}volution dans le temps d'un QuBit}{8}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}alg\IeC {\`e}bre des portes logiques}{9}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}portes logiques \IeC {\`a} 1 QuBit}{9}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}portes logiques \IeC {\`a} 2 QuBit}{10}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {1.3.5}Ensemble universel}{11}{subsection.1.3.5}

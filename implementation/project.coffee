@@ -15,7 +15,6 @@ class QuObject
         ret
 
     # [0,0,0,1,0,0,1,0] -> "00010010"
-    # this function seems useless, since [0,0,0,1,0,0,1,0] != "00010010"
     getStr: (arr) ->
         ret = ""
         for i in [0...arr.length]
@@ -30,6 +29,8 @@ class QuObject
 
     strReplace: (str, index, replacement) ->
         str.substr(0, index) + replacement + str.substr(index + replacement.length)
+
+
 # this class represents the quantum state of a register of qubits
 class QuState extends QuObject
     # we suppose coeffs.length == dim
@@ -84,9 +85,10 @@ class QuState extends QuObject
 
     isMeasured: () ->
         @measured
+
+
 class QuRegister extends QuObject
     # give "|001>", "/001>", or [0,1,0,0,0,0,0,0], which represents the same state
-    # later, should add an option to just generate a random register of the dim specified
     constructor: (st) ->
         super()
         if ( (st[0] == "|") || (st[0] == "/") )  &&  ( st[(st.length)-1] == ">" )
@@ -121,12 +123,14 @@ class QuRegister extends QuObject
 
         for i in [0...(Math.pow(2,dim))]
             bin = (@toBin i, dim)
-            if (bin[x] == "0") # H(|0>) = ( 1/sqrt(2) )*( |0> + |1> )
+            if (bin[x] == '0') # H(|0>) = ( 1/sqrt(2) )*( |0> + |1> )
                 [c1,c2] = [bin, (@strReplace bin, x, "1" )]
+                console.log "1/ " + c1 + " -- " + c2
                 newCoeffs[parseInt(c1,2)] += (@quState.coeffs[i]/Math.sqrt(2))
                 newCoeffs[parseInt(c2,2)] += (@quState.coeffs[i]/Math.sqrt(2))
             else # H(|1>) = ( 1/sqrt(2) )*( |0> - |1> )
                 [c1,c2] = [(@strReplace bin, x, "0" ), bin]
+                console.log "2/ " + c1 + " -- " + c2
                 newCoeffs[parseInt(c1,2)] += (@quState.coeffs[i]/Math.sqrt(2))
                 newCoeffs[parseInt(c2,2)] -= (@quState.coeffs[i]/Math.sqrt(2))
 
@@ -135,7 +139,6 @@ class QuRegister extends QuObject
 
 
     hadamardAll: () ->
-        ret = @quState
         for i in [0...@quState.dim]
             @hadamard i
         @
@@ -217,17 +220,6 @@ class QuRegister extends QuObject
         @quState = new QuState dim, newCoeffs
         @
 
-#reg = new QuRegister "/001>"
-#reg2 = new QuRegister [0,1,0,0,0,0,0,0]
-#reg3 = new QuRegister "|001>"
-#reg4 = new QuRegister "/110>"
-###
-
-pour la classe QuRegister, chaque porte retourne this ( = @) pour pouvoir chainer les appels. Malgré cette possibilité, j'ai décidé que chaque appel à un porte modifierait l'objet en lui meme . Ainsi, on peux faire myreg.unePorteQuantique() puis observer myReg : il aura subit les modifications de la porte concernée.
-
-Concernant la manière de coder les portes, pour le moment, je n'ai pas utilisé les matrices, car ça m'a aidé à mieux comprendre de faire ça "à la main". Dans l'avenir, je repasserai peut etre par la représentation matricielle. Je me demande cela dit s'il n'y a pas un léger gachis de calculs en utilisant les matrices.
-
-###
 
 # testing measure()
 reg0 = new QuRegister [math.complex(0,4),0,0,4,0,0,0,0]

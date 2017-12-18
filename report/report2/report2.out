@@ -1,0 +1,17 @@
+\BOOKMARK [0][-]{chapter.1}{Simulation informatique}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Rappels math\351matiques}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Loi de composition interne et groupe}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Anneaux et corps}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{espace vectoriel et produit scalaire}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.4}{norme induite, suites de Cauchy et espace de Hilbert}{section.1.1}% 6
+\BOOKMARK [1][-]{section.1.2}{Application aux QuBits}{chapter.1}% 7
+\BOOKMARK [2][-]{subsection.1.2.1}{D\351finition d'un QuBit}{section.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.2.2}{QuBit et mesure}{section.1.2}% 9
+\BOOKMARK [2][-]{subsection.1.2.3}{Visualisation avec la sph\350re de Bloch}{section.1.2}% 10
+\BOOKMARK [2][-]{subsection.1.2.4}{extension \340 plusieurs QuBits}{section.1.2}% 11
+\BOOKMARK [1][-]{section.1.3}{Portes logiques}{chapter.1}% 12
+\BOOKMARK [2][-]{subsection.1.3.1}{\351volution dans le temps d'un QuBit}{section.1.3}% 13
+\BOOKMARK [2][-]{subsection.1.3.2}{alg\350bre des portes logiques}{section.1.3}% 14
+\BOOKMARK [2][-]{subsection.1.3.3}{portes logiques \340 1 QuBit}{section.1.3}% 15
+\BOOKMARK [2][-]{subsection.1.3.4}{portes logiques \340 2 QuBit}{section.1.3}% 16
+\BOOKMARK [2][-]{subsection.1.3.5}{Ensemble universel}{section.1.3}% 17
