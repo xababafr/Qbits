@@ -257,6 +257,7 @@ console.log "CPHASE(0,1,e^(-i*PI/4)) : " + reg7.getState() + " ---> " + reg7.cph
 
 console.log "\n\n ------------------------------------------------------------------- \n\n"
 
+
 reg8 = new QuRegister "/010>"
 reg8.p('Init')
     .hadamard(1).p('Hadamard(1)')
@@ -264,3 +265,10 @@ reg8.p('Init')
     .cnot(0,2)  .p( 'Cnot(0,2)' )
     .not(0)     .p(   'Not(0)'  )
     .measure()  .p(' Measure()' )
+
+start = new Date().getTime()
+for i in [0...10000]
+    reg9 = new QuRegister "/010>"
+    reg9.hadamardAll()
+end = new Date().getTime()
+console.log("time taken : "+(end-start))

@@ -1,0 +1,45 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Project's context}{}% 2
+\BOOKMARK [1][-]{section.2.1}{History of quantum physics}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Quantum physics basic principles}{chapter.2}% 4
+\BOOKMARK [2][-]{subsection.2.2.1}{Superposition principle}{section.2.2}% 5
+\BOOKMARK [2][-]{subsection.2.2.2}{Measurment indeterminism}{section.2.2}% 6
+\BOOKMARK [2][-]{subsection.2.2.3}{Quantum states reduction}{section.2.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.4}{Particle-wave duality}{section.2.2}% 8
+\BOOKMARK [2][-]{subsection.2.2.5}{Heisenberg uncertainty principle}{section.2.2}% 9
+\BOOKMARK [1][-]{section.2.3}{Introduction to quantum computing}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.3.1}{Classical computer}{section.2.3}% 11
+\BOOKMARK [2][-]{subsection.2.3.2}{Quantum computer and project's goals}{section.2.3}% 12
+\BOOKMARK [2][-]{subsection.2.3.3}{Why is there such an interest on quantum computing?}{section.2.3}% 13
+\BOOKMARK [0][-]{chapter.3}{Mathematical reminders}{}% 14
+\BOOKMARK [1][-]{section.3.1}{Qubits}{chapter.3}% 15
+\BOOKMARK [2][-]{subsection.3.1.1}{Qubit definition}{section.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.1.2}{Measuring a qubit}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.3}{Bloch's sphere}{section.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.1.4}{Multiple qubits register}{section.3.1}% 19
+\BOOKMARK [1][-]{section.3.2}{Quantum gates}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.2.1}{One qubit gates}{section.3.2}% 21
+\BOOKMARK [2][-]{subsection.3.2.2}{Two qubits gates}{section.3.2}% 22
+\BOOKMARK [0][-]{chapter.4}{Project's development}{}% 23
+\BOOKMARK [1][-]{section.4.1}{Establishing a golden model}{chapter.4}% 24
+\BOOKMARK [2][-]{subsection.4.1.1}{Class diagram}{section.4.1}% 25
+\BOOKMARK [2][-]{subsection.4.1.2}{First implementation in Coffescript}{section.4.1}% 26
+\BOOKMARK [1][-]{section.4.2}{Development of a more advanced simulator}{chapter.4}% 27
+\BOOKMARK [2][-]{subsection.4.2.1}{Programming language's choice}{section.4.2}% 28
+\BOOKMARK [2][-]{subsection.4.2.2}{Implementation}{section.4.2}% 29
+\BOOKMARK [0][-]{chapter.5}{Quantum algorithms and experimental results}{}% 30
+\BOOKMARK [1][-]{section.5.1}{Deutsch-Jozsa algorithm}{chapter.5}% 31
+\BOOKMARK [2][-]{subsection.5.1.1}{Description}{section.5.1}% 32
+\BOOKMARK [2][-]{subsection.5.1.2}{Implementation}{section.5.1}% 33
+\BOOKMARK [1][-]{section.5.2}{Shor and Grover's algorithms}{chapter.5}% 34
+\BOOKMARK [2][-]{subsection.5.2.1}{Shor's algorithm}{section.5.2}% 35
+\BOOKMARK [2][-]{subsection.5.2.2}{Grover's algorithm}{section.5.2}% 36
+\BOOKMARK [1][-]{section.5.3}{Experimental results}{chapter.5}% 37
+\BOOKMARK [2][-]{subsection.5.3.1}{Comparison with other libraries}{section.5.3}% 38
+\BOOKMARK [2][-]{subsection.5.3.2}{Comparison with the previous implementation}{section.5.3}% 39
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 40
+\BOOKMARK [0][-]{chapter*.2}{Bibliography}{}% 41
+\BOOKMARK [0][-]{chapter*.3}{Appendix}{}% 42
+\BOOKMARK [1][-]{section.6.1}{Golden model source code \(Coffeescript\)}{chapter*.3}% 43
+\BOOKMARK [1][-]{section.6.2}{Final implementation source code \(Crystal\)}{chapter*.3}% 44
+\BOOKMARK [1][-]{section.6.3}{Mathematics of qubits \(French\)}{chapter*.3}% 45
